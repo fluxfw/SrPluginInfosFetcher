@@ -2,6 +2,7 @@
 
 namespace srag\Plugins\SrPluginInfosFetcher\Config;
 
+use ilNumberInputGUI;
 use ilSrPluginInfosFetcherPlugin;
 use srag\ActiveRecordConfig\SrPluginInfosFetcher\ActiveRecordConfigFormGUI;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
@@ -24,6 +25,11 @@ class ConfigFormGUI extends ActiveRecordConfigFormGUI {
 	 * @inheritdoc
 	 */
 	protected function initFields()/*: void*/ {
-		$this->fields = [];
+		$this->fields = [
+			Config::KEY_DATA_COLLECTION_REF_ID => [
+				self::PROPERTY_CLASS => ilNumberInputGUI::class,
+				self::PROPERTY_REQUIRED => true
+			]
+		];
 	}
 }

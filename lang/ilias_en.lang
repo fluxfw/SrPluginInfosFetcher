@@ -1,5 +1,6 @@
 config_configuration#:#Configuration
 config_configuration_saved#:#Configuration saved
+config_data_collection_ref_id#:#Data collection ref id
 config_save#:#Save
 removeplugindataconfirm_cancel#:#Cancel
 removeplugindataconfirm_confirm_remove_data#:#Do you want to remove the %1$s data as well? At most, you just want to disable the %1$s plugin?
