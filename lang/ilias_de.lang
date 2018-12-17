@@ -1,7 +1,8 @@
 config_configuration#:#Konfiguration
 config_configuration_saved#:#Konfiguration gespeichert
-config_data_collection_ref_id#:#Datensammlung-Ref-ID
+config_data_collection_table_id#:#Datensammlung-Tabelle-ID
 config_save#:#Speichern
+cron_updated_status#:#%s Plugin-Eintrag(äge) aktualisiert
 removeplugindataconfirm_cancel#:#Abbrechen
 removeplugindataconfirm_confirm_remove_data#:#Möchten Sie die %1$s-Daten auch entfernen? Allenfalls möchten Sie das %1$s-Plugin nur deaktivieren?
 removeplugindataconfirm_deactivate#:#%1$s-Plugin nur deaktivieren

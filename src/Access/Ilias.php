@@ -42,4 +42,12 @@ final class Ilias {
 	private function __construct() {
 
 	}
+
+
+	/**
+	 * @return DataCollections
+	 */
+	public function dataCollections(): DataCollections {
+		return DataCollections::getInstance();
+	}
 }

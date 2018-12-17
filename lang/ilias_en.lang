@@ -1,7 +1,8 @@
 config_configuration#:#Configuration
 config_configuration_saved#:#Configuration saved
-config_data_collection_ref_id#:#Data collection ref id
+config_data_collection_table_id#:#Data collection table id
 config_save#:#Save
+cron_updated_status#:#%s plugin entry(ies) updated
 removeplugindataconfirm_cancel#:#Cancel
 removeplugindataconfirm_confirm_remove_data#:#Do you want to remove the %1$s data as well? At most, you just want to disable the %1$s plugin?
 removeplugindataconfirm_deactivate#:#Just deactivate %1$s plugin

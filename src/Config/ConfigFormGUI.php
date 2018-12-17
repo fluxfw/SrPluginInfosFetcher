@@ -26,7 +26,7 @@ class ConfigFormGUI extends ActiveRecordConfigFormGUI {
 	 */
 	protected function initFields()/*: void*/ {
 		$this->fields = [
-			Config::KEY_DATA_COLLECTION_REF_ID => [
+			Config::KEY_DATA_COLLECTION_TABLE_ID => [
 				self::PROPERTY_CLASS => ilNumberInputGUI::class,
 				self::PROPERTY_REQUIRED => true
 			]
