@@ -1,3 +1,5 @@
+Cron job plugin for https://docu.ilias.de to keep plugins version, min_ilias_version and max_ilias_version up to date
+
 ## Installation
 
 ### Install SrPluginInfosFetcher-Plugin
