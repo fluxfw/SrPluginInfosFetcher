@@ -12,9 +12,10 @@ class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
             'srag\\RemovePluginDataConfirm\\SrPluginInfosFetcher\\' => 50,
             'srag\\Plugins\\SrPluginInfosFetcher\\' => 34,
             'srag\\LibrariesNamespaceChanger\\' => 31,
+            'srag\\GitCurl\\SrPluginInfosFetcher\\' => 34,
             'srag\\DIC\\SrPluginInfosFetcher\\' => 30,
             'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\' => 42,
-            'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\' => 45,
+            'srag\\ActiveRecordConfig\\' => 24,
         ),
     );
 
@@ -31,6 +32,10 @@ class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
         array (
             0 => __DIR__ . '/..' . '/srag/librariesnamespacechanger/src',
         ),
+        'srag\\GitCurl\\SrPluginInfosFetcher\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/srag/gitcurl/src',
+        ),
         'srag\\DIC\\SrPluginInfosFetcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/dic/src',
@@ -39,7 +44,7 @@ class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
         array (
             0 => __DIR__ . '/..' . '/srag/custominputguis/src',
         ),
-        'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\' => 
+        'srag\\ActiveRecordConfig\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/activerecordconfig/src',
         ),
@@ -53,8 +58,11 @@ class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
         'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\ActiveRecordConfigFormGUI' => __DIR__ . '/..' . '/srag/activerecordconfig/src/ActiveRecordConfigFormGUI.php',
         'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\ActiveRecordConfigGUI' => __DIR__ . '/..' . '/srag/activerecordconfig/src/ActiveRecordConfigGUI.php',
         'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\ActiveRecordConfigTableGUI' => __DIR__ . '/..' . '/srag/activerecordconfig/src/ActiveRecordConfigTableGUI.php',
+        'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\ActiveRecordObjectFormGUI' => __DIR__ . '/..' . '/srag/activerecordconfig/src/ActiveRecordObjectFormGUI.php',
         'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\Exception\\ActiveRecordConfigException' => __DIR__ . '/..' . '/srag/activerecordconfig/src/Exception/ActiveRecordConfigException.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\CheckboxInputGUI\\CheckboxInputGUI' => __DIR__ . '/..' . '/srag/custominputguis/src/CheckboxInputGUI/CheckboxInputGUI.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\CustomInputGUIs' => __DIR__ . '/..' . '/srag/custominputguis/src/CustomInputGUIs.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\CustomInputGUIsTrait' => __DIR__ . '/..' . '/srag/custominputguis/src/CustomInputGUIsTrait.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\DateDurationInputGUI\\DateDurationInputGUI' => __DIR__ . '/..' . '/srag/custominputguis/src/DateDurationInputGUI/DateDurationInputGUI.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\GlyphGUI\\GlyphGUI' => __DIR__ . '/..' . '/srag/custominputguis/src/GlyphGUI/GlyphGUI.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\HiddenInputGUI\\HiddenInputGUI' => __DIR__ . '/..' . '/srag/custominputguis/src/HiddenInputGUI/HiddenInputGUI.php',
@@ -62,8 +70,21 @@ class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\MultiSelectSearchInputGUI\\MultiSelectSearchInput2GUI' => __DIR__ . '/..' . '/srag/custominputguis/src/MultiSelectSearchInputGUI/MultiSelectSearchInput2GUI.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\MultiSelectSearchInputGUI\\MultiSelectSearchInputGUI' => __DIR__ . '/..' . '/srag/custominputguis/src/MultiSelectSearchInputGUI/MultiSelectSearchInputGUI.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\NumberInputGUI\\NumberInputGUI' => __DIR__ . '/..' . '/srag/custominputguis/src/NumberInputGUI/NumberInputGUI.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\ProgressMeter\\Component\\Factory' => __DIR__ . '/..' . '/srag/custominputguis/src/ProgressMeter/Component/Factory.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\ProgressMeter\\Component\\FixedSize' => __DIR__ . '/..' . '/srag/custominputguis/src/ProgressMeter/Component/FixedSize.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\ProgressMeter\\Component\\Mini' => __DIR__ . '/..' . '/srag/custominputguis/src/ProgressMeter/Component/Mini.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\ProgressMeter\\Component\\ProgressMeter' => __DIR__ . '/..' . '/srag/custominputguis/src/ProgressMeter/Component/ProgressMeter.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\ProgressMeter\\Component\\Standard' => __DIR__ . '/..' . '/srag/custominputguis/src/ProgressMeter/Component/Standard.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\ProgressMeter\\Implementation\\Factory' => __DIR__ . '/..' . '/srag/custominputguis/src/ProgressMeter/Implementation/Factory.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\ProgressMeter\\Implementation\\FixedSize' => __DIR__ . '/..' . '/srag/custominputguis/src/ProgressMeter/Implementation/FixedSize.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\ProgressMeter\\Implementation\\Mini' => __DIR__ . '/..' . '/srag/custominputguis/src/ProgressMeter/Implementation/Mini.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\ProgressMeter\\Implementation\\ProgressMeter' => __DIR__ . '/..' . '/srag/custominputguis/src/ProgressMeter/Implementation/ProgressMeter.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\ProgressMeter\\Implementation\\Renderer' => __DIR__ . '/..' . '/srag/custominputguis/src/ProgressMeter/Implementation/Renderer.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\ProgressMeter\\Implementation\\Standard' => __DIR__ . '/..' . '/srag/custominputguis/src/ProgressMeter/Implementation/Standard.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\PropertyFormGUI\\ConfigPropertyFormGUI' => __DIR__ . '/..' . '/srag/custominputguis/src/PropertyFormGUI/ConfigPropertyFormGUI.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\PropertyFormGUI\\Exception\\PropertyFormGUIException' => __DIR__ . '/..' . '/srag/custominputguis/src/PropertyFormGUI/Exception/PropertyFormGUIException.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\PropertyFormGUI\\Items\\Items' => __DIR__ . '/..' . '/srag/custominputguis/src/PropertyFormGUI/Items/Items.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\PropertyFormGUI\\ObjectPropertyFormGUI' => __DIR__ . '/..' . '/srag/custominputguis/src/PropertyFormGUI/ObjectPropertyFormGUI.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\PropertyFormGUI\\PropertyFormGUI' => __DIR__ . '/..' . '/srag/custominputguis/src/PropertyFormGUI/PropertyFormGUI.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\ScreenshotsInputGUI\\ScreenshotsInputGUI' => __DIR__ . '/..' . '/srag/custominputguis/src/ScreenshotsInputGUI/ScreenshotsInputGUI.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\StaticHTMLPresentationInputGUI\\StaticHTMLPresentationInputGUI' => __DIR__ . '/..' . '/srag/custominputguis/src/StaticHTMLPresentationInputGUI/StaticHTMLPresentationInputGUI.php',
@@ -91,13 +112,13 @@ class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
         'srag\\DIC\\SrPluginInfosFetcher\\Plugin\\Pluginable' => __DIR__ . '/..' . '/srag/dic/src/Plugin/Pluginable.php',
         'srag\\DIC\\SrPluginInfosFetcher\\Version\\Version' => __DIR__ . '/..' . '/srag/dic/src/Version/Version.php',
         'srag\\DIC\\SrPluginInfosFetcher\\Version\\VersionInterface' => __DIR__ . '/..' . '/srag/dic/src/Version/VersionInterface.php',
+        'srag\\GitCurl\\SrPluginInfosFetcher\\GitCurl' => __DIR__ . '/..' . '/srag/gitcurl/src/GitCurl.php',
         'srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger' => __DIR__ . '/..' . '/srag/librariesnamespacechanger/src/LibrariesNamespaceChanger.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Access\\Access' => __DIR__ . '/../..' . '/src/Access/Access.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Access\\DataCollections' => __DIR__ . '/../..' . '/src/Access/DataCollections.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Access\\Ilias' => __DIR__ . '/../..' . '/src/Access/Ilias.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Config\\Config' => __DIR__ . '/../..' . '/src/Config/Config.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Config\\ConfigFormGUI' => __DIR__ . '/../..' . '/src/Config/ConfigFormGUI.php',
-        'srag\\Plugins\\SrPluginInfosFetcher\\Git\\GitFetcher' => __DIR__ . '/../..' . '/src/Git/GitFetcher.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Info\\PluginInfo' => __DIR__ . '/../..' . '/src/Info/PluginInfo.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Job\\Job' => __DIR__ . '/../..' . '/src/Job/Job.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Utils\\SrPluginInfosFetcherTrait' => __DIR__ . '/../..' . '/src/Utils/SrPluginInfosFetcherTrait.php',

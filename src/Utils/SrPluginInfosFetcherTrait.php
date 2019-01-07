@@ -2,9 +2,9 @@
 
 namespace srag\Plugins\SrPluginInfosFetcher\Utils;
 
+use srag\GitCurl\SrPluginInfosFetcher\GitCurl;
 use srag\Plugins\SrPluginInfosFetcher\Access\Access;
 use srag\Plugins\SrPluginInfosFetcher\Access\Ilias;
-use srag\Plugins\SrPluginInfosFetcher\Git\GitFetcher;
 
 /**
  * Trait SrPluginInfosFetcherTrait
@@ -26,10 +26,10 @@ trait SrPluginInfosFetcherTrait {
 	/**
 	 * @param string $url
 	 *
-	 * @return GitFetcher
+	 * @return GitCurl
 	 */
-	protected static function gitFetcher(string $url): GitFetcher {
-		return GitFetcher::getInstance($url);
+	protected static function gitFetcher(string $url): GitCurl {
+		return GitCurl::getInstance($url);
 	}
 
 
