@@ -13,6 +13,7 @@ return array(
     'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\ActiveRecordConfigFormGUI' => $vendorDir . '/srag/activerecordconfig/src/ActiveRecordConfigFormGUI.php',
     'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\ActiveRecordConfigGUI' => $vendorDir . '/srag/activerecordconfig/src/ActiveRecordConfigGUI.php',
     'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\ActiveRecordConfigTableGUI' => $vendorDir . '/srag/activerecordconfig/src/ActiveRecordConfigTableGUI.php',
+    'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\ActiveRecordObjectFormGUI' => $vendorDir . '/srag/activerecordconfig/src/ActiveRecordObjectFormGUI.php',
     'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\Exception\\ActiveRecordConfigException' => $vendorDir . '/srag/activerecordconfig/src/Exception/ActiveRecordConfigException.php',
     'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\CheckboxInputGUI\\CheckboxInputGUI' => $vendorDir . '/srag/custominputguis/src/CheckboxInputGUI/CheckboxInputGUI.php',
     'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\CustomInputGUIs' => $vendorDir . '/srag/custominputguis/src/CustomInputGUIs.php',
