@@ -11,6 +11,9 @@ git clone https://github.com/studer-raimann/SrPluginInfosFetcher.git SrPluginInf
 ```
 Update and activate the plugin in the ILIAS Plugin Administration
 
+### Some screenshots
+TODO
+
 ### Dependencies
 * ILIAS 5.3
 * PHP >=7.0
