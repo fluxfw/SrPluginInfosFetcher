@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . "/../vendor/autoload.php";
-
 use srag\ActiveRecordConfig\SrPluginInfosFetcher\ActiveRecordConfigGUI;
 use srag\Plugins\SrPluginInfosFetcher\Config\ConfigFormGUI;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
