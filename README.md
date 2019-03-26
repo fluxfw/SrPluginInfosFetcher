@@ -15,7 +15,7 @@ Update and activate the plugin in the ILIAS Plugin Administration
 TODO
 
 ### Dependencies
-* ILIAS 5.3 or ILIAS 5.4
+* ILIAS 5.3.14 or ILIAS 5.4
 * PHP >=7.0
 * [composer](https://getcomposer.org)
 * [srag/activerecordconfig](https://packagist.org/packages/srag/activerecordconfig)

@@ -9,7 +9,7 @@ use srag\CustomInputGUIs\SrPluginInfosFetcher\ProgressMeter\Component\Factory as
 /**
  * Class Factory
  *
- * https://github.com/ILIAS-eLearning/ILIAS/tree/trunk/src/UI/Implementation/Component/Card/Factory.php
+ * https://github.com/ILIAS-eLearning/ILIAS/tree/trunk/src/UI/Implementation/Component/Chart/ProgressMeter/Factory.php
  *
  * @package srag\CustomInputGUIs\SrPluginInfosFetcher\ProgressMeter\Implementation
  *

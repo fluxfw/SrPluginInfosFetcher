@@ -3,6 +3,7 @@
 namespace srag\DIC\SrPluginInfosFetcher\Output;
 
 use ILIAS\UI\Component\Component;
+use ilTable2GUI;
 use ilTemplate;
 use JsonSerializable;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
@@ -19,6 +20,14 @@ use stdClass;
 final class Output implements OutputInterface {
 
 	use DICTrait;
+
+
+	/**
+	 * Output constructor
+	 */
+	public function __construct() {
+
+	}
 
 
 	/**
@@ -40,6 +49,12 @@ final class Output implements OutputInterface {
 				// Component instance
 				case ($value instanceof Component):
 					$html = self::dic()->ui()->renderer()->render($value);
+					break;
+
+				// ilTable2GUI instance
+				case ($value instanceof ilTable2GUI):
+					// Fix stupid broken ilTable2GUI (render has only header without rows)
+					$html = $value->getHTML();
 					break;
 
 				// GUI instance
@@ -103,7 +118,7 @@ final class Output implements OutputInterface {
 			case (is_bool($value)):
 			case (is_array($value)):
 			case ($value instanceof stdClass):
-			case ($value === NULL):
+			case ($value === null):
 			case ($value instanceof JsonSerializable):
 				$value = json_encode($value);
 

@@ -12,5 +12,5 @@ return array(
     'srag\\GitCurl\\SrPluginInfosFetcher\\' => array($vendorDir . '/srag/gitcurl/src'),
     'srag\\DIC\\SrPluginInfosFetcher\\' => array($vendorDir . '/srag/dic/src'),
     'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\' => array($vendorDir . '/srag/custominputguis/src'),
-    'srag\\ActiveRecordConfig\\' => array($vendorDir . '/srag/activerecordconfig/src'),
+    'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\' => array($vendorDir . '/srag/activerecordconfig/src'),
 );

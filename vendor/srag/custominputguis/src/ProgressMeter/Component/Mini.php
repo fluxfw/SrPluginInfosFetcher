@@ -7,7 +7,7 @@ namespace srag\CustomInputGUIs\SrPluginInfosFetcher\ProgressMeter\Component;
 /**
  * Interface Mini
  *
- * https://github.com/ILIAS-eLearning/ILIAS/tree/trunk/src/UI/Component/Card/Mini.php
+ * https://github.com/ILIAS-eLearning/ILIAS/tree/trunk/src/UI/Component/Chart/ProgressMeter/Mini.php
  *
  * @package srag\CustomInputGUIs\SrPluginInfosFetcher\ProgressMeter\Component
  *
