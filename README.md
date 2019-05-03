@@ -21,6 +21,7 @@ TODO
 * [srag/activerecordconfig](https://packagist.org/packages/srag/activerecordconfig)
 * [srag/custominputguis](https://packagist.org/packages/srag/custominputguis)
 * [srag/dic](https://packagist.org/packages/srag/dic)
+* [srag/gitcurl](https://packagist.org/packages/srag/gitcurl)
 * [srag/librariesnamespacechanger](https://packagist.org/packages/srag/librariesnamespacechanger)
 * [srag/removeplugindataconfirm](https://packagist.org/packages/srag/removeplugindataconfirm)
 
