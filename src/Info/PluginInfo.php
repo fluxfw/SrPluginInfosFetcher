@@ -2,6 +2,7 @@
 
 namespace srag\Plugins\SrPluginInfosFetcher\Info;
 
+use srag\CustomInputGUIs\SrPluginInfosFetcher\PropertyFormGUI\Items\Items;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 
@@ -72,11 +73,7 @@ class PluginInfo {
 	 * @return string
 	 */
 	public function getProperty(string $property): string {
-		if (method_exists($this, $method = "get" . $this->strToCamelCase($property))) {
-			return $this->{$method}();
-		} else {
-			return "";
-		}
+		return Items::getter($this, $property) ?? "";
 	}
 
 
@@ -89,8 +86,8 @@ class PluginInfo {
 	public function setProperty(string $property, string $value): bool {
 		$old_value = $this->getProperty($property);
 
-		if (method_exists($this, $method = "set" . $this->strToCamelCase($property))) {
-			$this->{$method}($value);
+		if (method_exists($this, $method = "set" . Items::strToCamelCase($property))) {
+			Items::setter($this, $property, $value);
 
 			return ($this->getProperty($property) !== $old_value);
 		}
@@ -113,16 +110,6 @@ class PluginInfo {
 	public function hasRequiredValues(): bool {
 		// Needs plugin id and supports only git download url
 		return (!empty($this->getPluginId()) && strpos($this->getGitUrl(), "git") !== - 1);
-	}
-
-
-	/**
-	 * @param string $string
-	 *
-	 * @return string
-	 */
-	protected function strToCamelCase($string): string {
-		return str_replace("_", "", ucwords($string, "_"));
 	}
 
 

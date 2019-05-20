@@ -2,6 +2,9 @@
 
 namespace srag\DIC\SrPluginInfosFetcher\DIC;
 
+use srag\DIC\SrPluginInfosFetcher\Database\DatabaseDetector;
+use srag\DIC\SrPluginInfosFetcher\Database\DatabaseInterface;
+
 /**
  * Class AbstractDIC
  *
@@ -16,5 +19,13 @@ abstract class AbstractDIC implements DICInterface {
 	 */
 	protected function __construct() {
 
+	}
+
+
+	/**
+	 * @inheritdoc
+	 */
+	public function database(): DatabaseInterface {
+		return DatabaseDetector::getInstance($this->databaseCore());
 	}
 }
