@@ -177,7 +177,7 @@ final class DataCollections {
 	 */
 	private function getValueFromField(string $property, ilDclBaseRecordFieldModel $field): string {
 		// Tricks with getPlainText to get correct reference values such ilias_min_version or ilias_max_version
-		return $field->getPlainText();
+		return strval($field->getPlainText());
 	}
 
 
