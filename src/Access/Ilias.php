@@ -13,41 +13,45 @@ use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
-final class Ilias {
+final class Ilias
+{
 
-	use DICTrait;
-	use SrPluginInfosFetcherTrait;
-	const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
-	/**
-	 * @var self
-	 */
-	protected static $instance = NULL;
-
-
-	/**
-	 * @return self
-	 */
-	public static function getInstance(): self {
-		if (self::$instance === NULL) {
-			self::$instance = new self();
-		}
-
-		return self::$instance;
-	}
+    use DICTrait;
+    use SrPluginInfosFetcherTrait;
+    const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
+    /**
+     * @var self
+     */
+    protected static $instance = null;
 
 
-	/**
-	 * Ilias constructor
-	 */
-	private function __construct() {
+    /**
+     * @return self
+     */
+    public static function getInstance() : self
+    {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
 
-	}
+        return self::$instance;
+    }
 
 
-	/**
-	 * @return DataCollections
-	 */
-	public function dataCollections(): DataCollections {
-		return DataCollections::getInstance();
-	}
+    /**
+     * Ilias constructor
+     */
+    private function __construct()
+    {
+
+    }
+
+
+    /**
+     * @return DataCollections
+     */
+    public function dataCollections() : DataCollections
+    {
+        return DataCollections::getInstance();
+    }
 }

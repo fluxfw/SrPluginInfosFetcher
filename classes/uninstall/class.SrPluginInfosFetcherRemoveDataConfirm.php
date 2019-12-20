@@ -12,8 +12,9 @@ use srag\RemovePluginDataConfirm\SrPluginInfosFetcher\AbstractRemovePluginDataCo
  *
  * @ilCtrl_isCalledBy SrPluginInfosFetcherRemoveDataConfirm: ilUIPluginRouterGUI
  */
-class SrPluginInfosFetcherRemoveDataConfirm extends AbstractRemovePluginDataConfirm {
+class SrPluginInfosFetcherRemoveDataConfirm extends AbstractRemovePluginDataConfirm
+{
 
-	use SrPluginInfosFetcherTrait;
-	const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
+    use SrPluginInfosFetcherTrait;
+    const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
 }
