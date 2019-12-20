@@ -13,16 +13,18 @@ use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
-class Config extends ActiveRecordConfig {
+class Config extends ActiveRecordConfig
+{
 
-	use SrPluginInfosFetcherTrait;
-	const TABLE_NAME = "srplinfe_config";
-	const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
-	const KEY_DATA_COLLECTION_TABLE_ID = "data_collection_table_id";
-	/**
-	 * @var array
-	 */
-	protected static $fields = [
-		self::KEY_DATA_COLLECTION_TABLE_ID => self::TYPE_INTEGER
-	];
+    use SrPluginInfosFetcherTrait;
+    const TABLE_NAME = "srplinfe_config";
+    const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
+    const KEY_DATA_COLLECTION_TABLE_ID = "data_collection_table_id";
+    /**
+     * @var array
+     */
+    protected static $fields
+        = [
+            self::KEY_DATA_COLLECTION_TABLE_ID => self::TYPE_INTEGER
+        ];
 }

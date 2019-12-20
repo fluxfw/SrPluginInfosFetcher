@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.6.0]
+- Automatic ctrl class
+
+## [0.5.0]
+- Some improvments
+
+## [0.4.1]
+- Fix
+
+## [0.4.0]
+- LibraryLanguageInstaller
+
+## [0.3.6]
+- Fixes
+
 ## [0.3.5]
 - Output ...
 

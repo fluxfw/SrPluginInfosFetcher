@@ -14,22 +14,24 @@ use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
-class ConfigFormGUI extends ActiveRecordConfigFormGUI {
+class ConfigFormGUI extends ActiveRecordConfigFormGUI
+{
 
-	use SrPluginInfosFetcherTrait;
-	const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
-	const CONFIG_CLASS_NAME = Config::class;
+    use SrPluginInfosFetcherTrait;
+    const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
+    const CONFIG_CLASS_NAME = Config::class;
 
 
-	/**
-	 * @inheritdoc
-	 */
-	protected function initFields()/*: void*/ {
-		$this->fields = [
-			Config::KEY_DATA_COLLECTION_TABLE_ID => [
-				self::PROPERTY_CLASS => ilNumberInputGUI::class,
-				self::PROPERTY_REQUIRED => true
-			]
-		];
-	}
+    /**
+     * @inheritdoc
+     */
+    protected function initFields()/*: void*/
+    {
+        $this->fields = [
+            Config::KEY_DATA_COLLECTION_TABLE_ID => [
+                self::PROPERTY_CLASS    => ilNumberInputGUI::class,
+                self::PROPERTY_REQUIRED => true
+            ]
+        ];
+    }
 }

@@ -13,30 +13,34 @@ use srag\Plugins\SrPluginInfosFetcher\Access\Ilias;
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
-trait SrPluginInfosFetcherTrait {
+trait SrPluginInfosFetcherTrait
+{
 
-	/**
-	 * @return Access
-	 */
-	protected static function access(): Access {
-		return Access::getInstance();
-	}
-
-
-	/**
-	 * @param string $url
-	 *
-	 * @return GitCurl
-	 */
-	protected static function gitFetcher(string $url): GitCurl {
-		return GitCurl::getInstance($url);
-	}
+    /**
+     * @return Access
+     */
+    protected static function access() : Access
+    {
+        return Access::getInstance();
+    }
 
 
-	/**
-	 * @return Ilias
-	 */
-	protected static function ilias(): Ilias {
-		return Ilias::getInstance();
-	}
+    /**
+     * @param string $url
+     *
+     * @return GitCurl
+     */
+    protected static function gitFetcher(string $url) : GitCurl
+    {
+        return GitCurl::getInstance($url);
+    }
+
+
+    /**
+     * @return Ilias
+     */
+    protected static function ilias() : Ilias
+    {
+        return Ilias::getInstance();
+    }
 }

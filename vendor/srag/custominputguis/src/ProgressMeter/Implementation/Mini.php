@@ -9,15 +9,16 @@ use srag\CustomInputGUIs\SrPluginInfosFetcher\ProgressMeter\Component\Mini as Mi
 /**
  * Class Mini
  *
- * https://github.com/ILIAS-eLearning/ILIAS/tree/trunk/src/UI/Implementation/Component/Card/Mini.php
+ * https://github.com/ILIAS-eLearning/ILIAS/tree/trunk/src/UI/Implementation/Component/Chart/ProgressMeter/Mini.php
  *
  * @package srag\CustomInputGUIs\SrPluginInfosFetcher\ProgressMeter\Implementation
  *
  * @author  Ralph Dittrich <dittrich@qualitus.de>
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *
- * @since ILIAS 5.4
+ * @since   ILIAS 5.4
  */
-class Mini extends ProgressMeter implements MiniComponent {
+class Mini extends ProgressMeter implements MiniComponent
+{
 
 }
