@@ -3,8 +3,9 @@
 namespace srag\Plugins\SrPluginInfosFetcher\Config;
 
 use ilNumberInputGUI;
+use ilSrPluginInfosFetcherConfigGUI;
 use ilSrPluginInfosFetcherPlugin;
-use srag\ActiveRecordConfig\SrPluginInfosFetcher\ActiveRecordConfigFormGUI;
+use srag\CustomInputGUIs\SrPluginInfosFetcher\PropertyFormGUI\ConfigPropertyFormGUI;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 
 /**
@@ -14,16 +15,37 @@ use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
-class ConfigFormGUI extends ActiveRecordConfigFormGUI
+class ConfigFormGUI extends ConfigPropertyFormGUI
 {
 
     use SrPluginInfosFetcherTrait;
     const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
     const CONFIG_CLASS_NAME = Config::class;
+    const LANG_MODULE = ilSrPluginInfosFetcherConfigGUI::LANG_MODULE;
 
 
     /**
-     * @inheritdoc
+     * ConfigFormGUI constructor
+     *
+     * @param ilSrPluginInfosFetcherConfigGUI $parent
+     */
+    public function __construct(ilSrPluginInfosFetcherConfigGUI $parent)
+    {
+        parent::__construct($parent);
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    protected function initCommands()/*: void*/
+    {
+        $this->addCommandButton(ilSrPluginInfosFetcherConfigGUI::CMD_UPDATE_CONFIGURE, $this->txt("save"));
+    }
+
+
+    /**
+     * @inheritDoc
      */
     protected function initFields()/*: void*/
     {
@@ -33,5 +55,23 @@ class ConfigFormGUI extends ActiveRecordConfigFormGUI
                 self::PROPERTY_REQUIRED => true
             ]
         ];
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    protected function initId()/*: void*/
+    {
+
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    protected function initTitle()/*: void*/
+    {
+        $this->setTitle($this->txt("configuration"));
     }
 }

@@ -95,7 +95,7 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
 
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     protected function deleteData()/*: void*/
     {
