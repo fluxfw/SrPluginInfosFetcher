@@ -1,4 +1,4 @@
 <#1>
 <?php
-\srag\Plugins\SrPluginInfosFetcher\Config\Config::updateDB();
+\srag\Plugins\SrPluginInfosFetcher\Repository::getInstance()->installTables();
 ?>

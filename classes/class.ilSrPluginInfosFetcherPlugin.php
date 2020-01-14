@@ -3,7 +3,6 @@
 require_once __DIR__ . "/../vendor/autoload.php";
 
 use srag\DIC\SrPluginInfosFetcher\Util\LibraryLanguageInstaller;
-use srag\Plugins\SrPluginInfosFetcher\Config\Config;
 use srag\Plugins\SrPluginInfosFetcher\Job\Job;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 use srag\RemovePluginDataConfirm\SrPluginInfosFetcher\PluginUninstallTrait;
@@ -99,6 +98,6 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
      */
     protected function deleteData()/*: void*/
     {
-        self::dic()->database()->dropTable(Config::TABLE_NAME, false);
+        self::srPluginInfosFetcher()->dropTables();
     }
 }

@@ -108,11 +108,11 @@ class Job extends ilCronJob
 
         $data_collection_table_id = Config::getField(Config::KEY_DATA_COLLECTION_TABLE_ID);
 
-        $plugins = self::ilias()->dataCollections()->getPlugins($data_collection_table_id);
+        $plugins = self::srPluginInfosFetcher()->ilias()->dataCollections()->getPlugins($data_collection_table_id);
 
         $updated_plugins = $this->fetchPluginInfos($plugins);
 
-        $updated_plugins_count = self::ilias()->dataCollections()->updatePlugins($data_collection_table_id, $updated_plugins);
+        $updated_plugins_count = self::srPluginInfosFetcher()->ilias()->dataCollections()->updatePlugins($data_collection_table_id, $updated_plugins);
 
         $result->setStatus(ilCronJobResult::STATUS_OK);
 
@@ -136,7 +136,7 @@ class Job extends ilCronJob
 
             $new_plugin = clone $plugin;
 
-            $plugin_php = self::gitFetcher($new_plugin->getGitUrl())->fetchFile("plugin.php");
+            $plugin_php = self::srPluginInfosFetcher()->gitFetcher($new_plugin->getGitUrl())->fetchFile("plugin.php");
 
             if ($plugin_php !== null) {
                 if ($this->checkVersion($plugin_php, "version", "plugin_version", $new_plugin)) {

@@ -2,9 +2,7 @@
 
 namespace srag\Plugins\SrPluginInfosFetcher\Utils;
 
-use srag\GitCurl\SrPluginInfosFetcher\GitCurl;
-use srag\Plugins\SrPluginInfosFetcher\Access\Access;
-use srag\Plugins\SrPluginInfosFetcher\Access\Ilias;
+use srag\Plugins\SrPluginInfosFetcher\Repository;
 
 /**
  * Trait SrPluginInfosFetcherTrait
@@ -17,30 +15,10 @@ trait SrPluginInfosFetcherTrait
 {
 
     /**
-     * @return Access
+     * @return Repository
      */
-    protected static function access() : Access
+    protected static function srPluginInfosFetcher() : Repository
     {
-        return Access::getInstance();
-    }
-
-
-    /**
-     * @param string $url
-     *
-     * @return GitCurl
-     */
-    protected static function gitFetcher(string $url) : GitCurl
-    {
-        return GitCurl::getInstance($url);
-    }
-
-
-    /**
-     * @return Ilias
-     */
-    protected static function ilias() : Ilias
-    {
-        return Ilias::getInstance();
+        return Repository::getInstance();
     }
 }

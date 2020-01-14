@@ -9,18 +9,18 @@ class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
     public static $prefixLengthsPsr4 = array (
         's' => 
         array (
-            'srag\\RemovePluginDataConfirm\\' => 29,
+            'srag\\RemovePluginDataConfirm\\SrPluginInfosFetcher\\' => 50,
             'srag\\Plugins\\SrPluginInfosFetcher\\' => 34,
             'srag\\LibrariesNamespaceChanger\\' => 31,
-            'srag\\GitCurl\\' => 13,
-            'srag\\DIC\\' => 9,
-            'srag\\CustomInputGUIs\\' => 21,
-            'srag\\ActiveRecordConfig\\' => 24,
+            'srag\\GitCurl\\SrPluginInfosFetcher\\' => 34,
+            'srag\\DIC\\SrPluginInfosFetcher\\' => 30,
+            'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\' => 42,
+            'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\' => 45,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'srag\\RemovePluginDataConfirm\\' => 
+        'srag\\RemovePluginDataConfirm\\SrPluginInfosFetcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/removeplugindataconfirm/src',
         ),
@@ -32,19 +32,19 @@ class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
         array (
             0 => __DIR__ . '/..' . '/srag/librariesnamespacechanger/src',
         ),
-        'srag\\GitCurl\\' => 
+        'srag\\GitCurl\\SrPluginInfosFetcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/gitcurl/src',
         ),
-        'srag\\DIC\\' => 
+        'srag\\DIC\\SrPluginInfosFetcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/dic/src',
         ),
-        'srag\\CustomInputGUIs\\' => 
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/custominputguis/src',
         ),
-        'srag\\ActiveRecordConfig\\' => 
+        'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/activerecordconfig/src',
         ),
@@ -149,13 +149,13 @@ class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
         'srag\\GitCurl\\SrPluginInfosFetcher\\GitCurl' => __DIR__ . '/..' . '/srag/gitcurl/src/GitCurl.php',
         'srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger' => __DIR__ . '/..' . '/srag/librariesnamespacechanger/src/LibrariesNamespaceChanger.php',
         'srag\\LibrariesNamespaceChanger\\PHP7Backport' => __DIR__ . '/..' . '/srag/librariesnamespacechanger/src/PHP7Backport.php',
-        'srag\\Plugins\\SrPluginInfosFetcher\\Access\\Access' => __DIR__ . '/../..' . '/src/Access/Access.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Access\\DataCollections' => __DIR__ . '/../..' . '/src/Access/DataCollections.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Access\\Ilias' => __DIR__ . '/../..' . '/src/Access/Ilias.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Config\\Config' => __DIR__ . '/../..' . '/src/Config/Config.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Config\\ConfigFormGUI' => __DIR__ . '/../..' . '/src/Config/ConfigFormGUI.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Info\\PluginInfo' => __DIR__ . '/../..' . '/src/Info/PluginInfo.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Job\\Job' => __DIR__ . '/../..' . '/src/Job/Job.php',
+        'srag\\Plugins\\SrPluginInfosFetcher\\Repository' => __DIR__ . '/../..' . '/src/Repository.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Utils\\SrPluginInfosFetcherTrait' => __DIR__ . '/../..' . '/src/Utils/SrPluginInfosFetcherTrait.php',
         'srag\\RemovePluginDataConfirm\\SrPluginInfosFetcher\\BasePluginUninstallTrait' => __DIR__ . '/..' . '/srag/removeplugindataconfirm/src/BasePluginUninstallTrait.php',
         'srag\\RemovePluginDataConfirm\\SrPluginInfosFetcher\\PluginUninstallTrait' => __DIR__ . '/..' . '/srag/removeplugindataconfirm/src/PluginUninstallTrait.php',
