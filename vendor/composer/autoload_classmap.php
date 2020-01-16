@@ -110,7 +110,6 @@ return array(
     'srag\\LibrariesNamespaceChanger\\PHP7Backport' => $vendorDir . '/srag/librariesnamespacechanger/src/PHP7Backport.php',
     'srag\\Plugins\\SrPluginInfosFetcher\\Access\\DataCollections' => $baseDir . '/src/Access/DataCollections.php',
     'srag\\Plugins\\SrPluginInfosFetcher\\Access\\Ilias' => $baseDir . '/src/Access/Ilias.php',
-    'srag\\Plugins\\SrPluginInfosFetcher\\Config\\Config' => $baseDir . '/src/Config/Config.php',
     'srag\\Plugins\\SrPluginInfosFetcher\\Config\\ConfigFormGUI' => $baseDir . '/src/Config/ConfigFormGUI.php',
     'srag\\Plugins\\SrPluginInfosFetcher\\Info\\PluginInfo' => $baseDir . '/src/Info/PluginInfo.php',
     'srag\\Plugins\\SrPluginInfosFetcher\\Job\\Job' => $baseDir . '/src/Job/Job.php',

@@ -20,6 +20,7 @@ class ConfigFormGUI extends PropertyFormGUI
 
     use SrPluginInfosFetcherTrait;
     const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
+    const KEY_DATA_COLLECTION_TABLE_ID = "data_collection_table_id";
     const LANG_MODULE = ilSrPluginInfosFetcherConfigGUI::LANG_MODULE;
 
 
@@ -41,7 +42,7 @@ class ConfigFormGUI extends PropertyFormGUI
     {
         switch ($key) {
             default:
-                return Config::getField($key);
+                return self::srPluginInfosFetcher()->config()->getField($key);
         }
     }
 
@@ -61,7 +62,7 @@ class ConfigFormGUI extends PropertyFormGUI
     protected function initFields()/*: void*/
     {
         $this->fields = [
-            Config::KEY_DATA_COLLECTION_TABLE_ID => [
+            self::KEY_DATA_COLLECTION_TABLE_ID => [
                 self::PROPERTY_CLASS    => ilNumberInputGUI::class,
                 self::PROPERTY_REQUIRED => true
             ]
@@ -94,7 +95,7 @@ class ConfigFormGUI extends PropertyFormGUI
     {
         switch ($key) {
             default:
-                Config::setField($key, $value);
+                self::srPluginInfosFetcher()->config()->setField($key, $value);
                 break;
         }
     }

@@ -155,7 +155,6 @@ class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
         'srag\\LibrariesNamespaceChanger\\PHP7Backport' => __DIR__ . '/..' . '/srag/librariesnamespacechanger/src/PHP7Backport.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Access\\DataCollections' => __DIR__ . '/../..' . '/src/Access/DataCollections.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Access\\Ilias' => __DIR__ . '/../..' . '/src/Access/Ilias.php',
-        'srag\\Plugins\\SrPluginInfosFetcher\\Config\\Config' => __DIR__ . '/../..' . '/src/Config/Config.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Config\\ConfigFormGUI' => __DIR__ . '/../..' . '/src/Config/ConfigFormGUI.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Info\\PluginInfo' => __DIR__ . '/../..' . '/src/Info/PluginInfo.php',
         'srag\\Plugins\\SrPluginInfosFetcher\\Job\\Job' => __DIR__ . '/../..' . '/src/Job/Job.php',

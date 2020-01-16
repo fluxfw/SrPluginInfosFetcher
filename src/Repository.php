@@ -3,10 +3,13 @@
 namespace srag\Plugins\SrPluginInfosFetcher;
 
 use ilSrPluginInfosFetcherPlugin;
+use srag\ActiveRecordConfig\SrPluginInfosFetcher\Config\Config;
+use srag\ActiveRecordConfig\SrPluginInfosFetcher\Config\Repository as ConfigRepository;
+use srag\ActiveRecordConfig\SrPluginInfosFetcher\Utils\ConfigTrait;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
 use srag\GitCurl\SrPluginInfosFetcher\GitCurl;
 use srag\Plugins\SrPluginInfosFetcher\Access\Ilias;
-use srag\Plugins\SrPluginInfosFetcher\Config\Config;
+use srag\Plugins\SrPluginInfosFetcher\Config\ConfigFormGUI;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 
 /**
@@ -21,6 +24,9 @@ final class Repository
 
     use DICTrait;
     use SrPluginInfosFetcherTrait;
+    use ConfigTrait {
+        config as protected _config;
+    }
     const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
     /**
      * @var self
@@ -46,7 +52,18 @@ final class Repository
      */
     private function __construct()
     {
+        $this->config()->withTableName(ilSrPluginInfosFetcherPlugin::PLUGIN_ID . "_config")->withFields([
+            ConfigFormGUI::KEY_DATA_COLLECTION_TABLE_ID => Config::TYPE_INTEGER
+        ]);
+    }
 
+
+    /**
+     * @inheritDoc
+     */
+    public function config() : ConfigRepository
+    {
+        return self::_config();
     }
 
 
@@ -55,7 +72,7 @@ final class Repository
      */
     public function dropTables()/*:void*/
     {
-        self::dic()->database()->dropTable(Config::TABLE_NAME, false);
+        $this->config()->dropTables();
     }
 
 
@@ -84,6 +101,6 @@ final class Repository
      */
     public function installTables()/*:void*/
     {
-        Config::updateDB();
+        $this->config()->installTables();
     }
 }
