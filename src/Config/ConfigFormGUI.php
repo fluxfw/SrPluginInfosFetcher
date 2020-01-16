@@ -5,7 +5,7 @@ namespace srag\Plugins\SrPluginInfosFetcher\Config;
 use ilNumberInputGUI;
 use ilSrPluginInfosFetcherConfigGUI;
 use ilSrPluginInfosFetcherPlugin;
-use srag\CustomInputGUIs\SrPluginInfosFetcher\PropertyFormGUI\ConfigPropertyFormGUI;
+use srag\CustomInputGUIs\SrPluginInfosFetcher\PropertyFormGUI\PropertyFormGUI;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 
 /**
@@ -15,12 +15,11 @@ use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
-class ConfigFormGUI extends ConfigPropertyFormGUI
+class ConfigFormGUI extends PropertyFormGUI
 {
 
     use SrPluginInfosFetcherTrait;
     const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
-    const CONFIG_CLASS_NAME = Config::class;
     const LANG_MODULE = ilSrPluginInfosFetcherConfigGUI::LANG_MODULE;
 
 
@@ -32,6 +31,18 @@ class ConfigFormGUI extends ConfigPropertyFormGUI
     public function __construct(ilSrPluginInfosFetcherConfigGUI $parent)
     {
         parent::__construct($parent);
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    protected function getValue(/*string*/ $key)
+    {
+        switch ($key) {
+            default:
+                return Config::getField($key);
+        }
     }
 
 
@@ -73,5 +84,18 @@ class ConfigFormGUI extends ConfigPropertyFormGUI
     protected function initTitle()/*: void*/
     {
         $this->setTitle($this->txt("configuration"));
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    protected function storeValue(/*string*/ $key, $value)/*: void*/
+    {
+        switch ($key) {
+            default:
+                Config::setField($key, $value);
+                break;
+        }
     }
 }
