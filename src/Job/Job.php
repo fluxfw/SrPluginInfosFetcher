@@ -106,7 +106,7 @@ class Job extends ilCronJob
     {
         $result = new ilCronJobResult();
 
-        $data_collection_table_id = self::srPluginInfosFetcher()->config()->getField(ConfigFormGUI::KEY_DATA_COLLECTION_TABLE_ID);
+        $data_collection_table_id = self::srPluginInfosFetcher()->config()->getValue(ConfigFormGUI::KEY_DATA_COLLECTION_TABLE_ID);
 
         $plugins = self::srPluginInfosFetcher()->ilias()->dataCollections()->getPlugins($data_collection_table_id);
 
