@@ -11,24 +11,24 @@ use srag\Plugins\SrPluginInfosFetcher\Info\PluginInfo;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 
 /**
- * Class Job
+ * Class PluginInfosFetcherJob
  *
  * @package srag\Plugins\SrPluginInfosFetcher\Job
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
-class Job extends ilCronJob
+class PluginInfosFetcherJob extends ilCronJob
 {
 
     use DICTrait;
     use SrPluginInfosFetcherTrait;
     const CRON_JOB_ID = ilSrPluginInfosFetcherPlugin::PLUGIN_ID;
     const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
-    const LANG_MODULE_CRON = "cron";
+    const LANG_MODULE = "cron";
 
 
     /**
-     * Job constructor
+     * PluginInfosFetcherJob constructor
      */
     public function __construct()
     {
@@ -116,7 +116,7 @@ class Job extends ilCronJob
 
         $result->setStatus(ilCronJobResult::STATUS_OK);
 
-        $result->setMessage(self::plugin()->translate("updated_status", self::LANG_MODULE_CRON, [$updated_plugins_count]));
+        $result->setMessage(self::plugin()->translate("updated_status", self::LANG_MODULE, [$updated_plugins_count]));
 
         return $result;
     }

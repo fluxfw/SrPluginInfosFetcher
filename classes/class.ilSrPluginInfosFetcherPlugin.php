@@ -2,8 +2,6 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use srag\DIC\SrPluginInfosFetcher\Util\LibraryLanguageInstaller;
-use srag\Plugins\SrPluginInfosFetcher\Job\Job;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 use srag\RemovePluginDataConfirm\SrPluginInfosFetcher\PluginUninstallTrait;
 
@@ -62,7 +60,7 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
      */
     public function getCronJobInstances() : array
     {
-        return [new Job()];
+        return self::srPluginInfosFetcher()->jobs()->factory()->newInstances();
     }
 
 
@@ -71,13 +69,7 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
      */
     public function getCronJobInstance(/*string*/ $a_job_id)/*: ?ilCronJob*/
     {
-        switch ($a_job_id) {
-            case Job::CRON_JOB_ID:
-                return new Job();
-
-            default:
-                return null;
-        }
+        return self::srPluginInfosFetcher()->jobs()->factory()->newInstanceById($a_job_id);
     }
 
 
@@ -88,8 +80,7 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
     {
         parent::updateLanguages($a_lang_keys);
 
-        LibraryLanguageInstaller::getInstance()->withPlugin(self::plugin())->withLibraryLanguageDirectory(__DIR__
-            . "/../vendor/srag/removeplugindataconfirm/lang")->updateLanguages();
+        $this->installRemovePluginDataConfirmLanguages();
     }
 
 
