@@ -24,7 +24,7 @@ final class Repository
     use SrPluginInfosFetcherTrait;
     const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
     /**
-     * @var self
+     * @var self|null
      */
     protected static $instance = null;
 
