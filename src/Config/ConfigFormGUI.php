@@ -3,7 +3,6 @@
 namespace srag\Plugins\SrPluginInfosFetcher\Config;
 
 use ilNumberInputGUI;
-use ilSrPluginInfosFetcherConfigGUI;
 use ilSrPluginInfosFetcherPlugin;
 use srag\CustomInputGUIs\SrPluginInfosFetcher\PropertyFormGUI\PropertyFormGUI;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
@@ -21,15 +20,15 @@ class ConfigFormGUI extends PropertyFormGUI
     use SrPluginInfosFetcherTrait;
     const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
     const KEY_DATA_COLLECTION_TABLE_ID = "data_collection_table_id";
-    const LANG_MODULE = ilSrPluginInfosFetcherConfigGUI::LANG_MODULE;
+    const LANG_MODULE = ConfigCtrl::LANG_MODULE;
 
 
     /**
      * ConfigFormGUI constructor
      *
-     * @param ilSrPluginInfosFetcherConfigGUI $parent
+     * @param ConfigCtrl $parent
      */
-    public function __construct(ilSrPluginInfosFetcherConfigGUI $parent)
+    public function __construct(ConfigCtrl $parent)
     {
         parent::__construct($parent);
     }
@@ -52,7 +51,7 @@ class ConfigFormGUI extends PropertyFormGUI
      */
     protected function initCommands()/*: void*/
     {
-        $this->addCommandButton(ilSrPluginInfosFetcherConfigGUI::CMD_UPDATE_CONFIGURE, $this->txt("save"));
+        $this->addCommandButton(ConfigCtrl::CMD_UPDATE_CONFIGURE, $this->txt("save"));
     }
 
 

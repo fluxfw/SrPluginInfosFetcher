@@ -2,7 +2,6 @@
 
 namespace srag\Plugins\SrPluginInfosFetcher\Config;
 
-use ilSrPluginInfosFetcherConfigGUI;
 use ilSrPluginInfosFetcherPlugin;
 use srag\ActiveRecordConfig\SrPluginInfosFetcher\Config\AbstractFactory;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
@@ -48,11 +47,11 @@ final class Factory extends AbstractFactory
 
 
     /**
-     * @param ilSrPluginInfosFetcherConfigGUI $parent
+     * @param ConfigCtrl $parent
      *
      * @return ConfigFormGUI
      */
-    public function newFormInstance(ilSrPluginInfosFetcherConfigGUI $parent) : ConfigFormGUI
+    public function newFormInstance(ConfigCtrl $parent) : ConfigFormGUI
     {
         $form = new ConfigFormGUI($parent);
 
