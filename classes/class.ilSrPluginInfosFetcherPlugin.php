@@ -15,6 +15,7 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
 
     use PluginUninstallTrait;
     use SrPluginInfosFetcherTrait;
+
     const PLUGIN_ID = "srplinfe";
     const PLUGIN_NAME = "SrPluginInfosFetcher";
     const PLUGIN_CLASS_NAME = self::class;

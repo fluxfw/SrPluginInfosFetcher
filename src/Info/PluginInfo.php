@@ -18,6 +18,7 @@ class PluginInfo
 
     use DICTrait;
     use SrPluginInfosFetcherTrait;
+
     /**
      * @var string
      */

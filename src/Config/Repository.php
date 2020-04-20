@@ -6,6 +6,7 @@ use ilSrPluginInfosFetcherPlugin;
 use srag\ActiveRecordConfig\SrPluginInfosFetcher\Config\AbstractFactory;
 use srag\ActiveRecordConfig\SrPluginInfosFetcher\Config\AbstractRepository;
 use srag\ActiveRecordConfig\SrPluginInfosFetcher\Config\Config;
+use srag\Plugins\SrPluginInfosFetcher\Config\Form\FormBuilder;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 
 /**
@@ -19,6 +20,7 @@ final class Repository extends AbstractRepository
 {
 
     use SrPluginInfosFetcherTrait;
+
     const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
     /**
      * @var self|null
@@ -74,7 +76,7 @@ final class Repository extends AbstractRepository
     protected function getFields() : array
     {
         return [
-            ConfigFormGUI::KEY_DATA_COLLECTION_TABLE_ID => Config::TYPE_INTEGER
+            FormBuilder::KEY_DATA_COLLECTION_TABLE_ID => Config::TYPE_INTEGER
         ];
     }
 }

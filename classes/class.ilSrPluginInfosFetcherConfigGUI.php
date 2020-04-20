@@ -16,6 +16,7 @@ class ilSrPluginInfosFetcherConfigGUI extends ilPluginConfigGUI
 
     use DICTrait;
     use SrPluginInfosFetcherTrait;
+
     const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
     const CMD_CONFIGURE = "configure";
 

@@ -6,7 +6,7 @@ use ilCronJob;
 use ilCronJobResult;
 use ilSrPluginInfosFetcherPlugin;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
-use srag\Plugins\SrPluginInfosFetcher\Config\ConfigFormGUI;
+use srag\Plugins\SrPluginInfosFetcher\Config\Form\FormBuilder;
 use srag\Plugins\SrPluginInfosFetcher\Info\PluginInfo;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 
@@ -22,6 +22,7 @@ class PluginInfosFetcherJob extends ilCronJob
 
     use DICTrait;
     use SrPluginInfosFetcherTrait;
+
     const CRON_JOB_ID = ilSrPluginInfosFetcherPlugin::PLUGIN_ID;
     const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
     const LANG_MODULE = "cron";
@@ -106,7 +107,7 @@ class PluginInfosFetcherJob extends ilCronJob
     {
         $result = new ilCronJobResult();
 
-        $data_collection_table_id = self::srPluginInfosFetcher()->config()->getValue(ConfigFormGUI::KEY_DATA_COLLECTION_TABLE_ID);
+        $data_collection_table_id = self::srPluginInfosFetcher()->config()->getValue(FormBuilder::KEY_DATA_COLLECTION_TABLE_ID);
 
         $plugins = self::srPluginInfosFetcher()->ilias()->dataCollections()->getPlugins($data_collection_table_id);
 
