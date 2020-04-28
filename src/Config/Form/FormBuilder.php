@@ -71,7 +71,7 @@ class FormBuilder extends AbstractFormBuilder
                 ->factory()
                 ->input()
                 ->field()
-                ->input(self::plugin()->translate(self::KEY_DATA_COLLECTION_TABLE_ID, ConfigCtrl::LANG_MODULE))
+                ->numeric(self::plugin()->translate(self::KEY_DATA_COLLECTION_TABLE_ID, ConfigCtrl::LANG_MODULE))
                 ->withRequired(true)
         ];
 
