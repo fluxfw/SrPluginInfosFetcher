@@ -128,8 +128,13 @@ class PluginInfo
     protected function fixMinMaxVersion(string $version) : string
     {
         if (substr_count($version, ".") === 2) {
-            // Only 2 parts: x.y
+            // Only 2 parts x.y for older ILIAS versions
             $version = preg_replace("/\.[0-9]+$/", "", $version);
+        } else {
+            if (substr_count($version, ".") === 1) {
+                // ILIAS 6 version syntax uses only one part x
+                $version = explode(".", $version)[0];
+            }
         }
 
         return $version;
