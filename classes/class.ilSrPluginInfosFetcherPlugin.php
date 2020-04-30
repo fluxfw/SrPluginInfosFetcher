@@ -2,9 +2,6 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use srag\DIC\SrPluginInfosFetcher\Util\LibraryLanguageInstaller;
-use srag\Plugins\SrPluginInfosFetcher\Config\Config;
-use srag\Plugins\SrPluginInfosFetcher\Job\Job;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 use srag\RemovePluginDataConfirm\SrPluginInfosFetcher\PluginUninstallTrait;
 
@@ -18,6 +15,7 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
 
     use PluginUninstallTrait;
     use SrPluginInfosFetcherTrait;
+
     const PLUGIN_ID = "srplinfe";
     const PLUGIN_NAME = "SrPluginInfosFetcher";
     const PLUGIN_CLASS_NAME = self::class;
@@ -50,7 +48,7 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
 
 
     /**
-     * @return string
+     * @inheritDoc
      */
     public function getPluginName() : string
     {
@@ -59,50 +57,39 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
 
 
     /**
-     * @return ilCronJob[]
+     * @inheritDoc
      */
     public function getCronJobInstances() : array
     {
-        return [new Job()];
+        return self::srPluginInfosFetcher()->jobs()->factory()->newInstances();
     }
 
 
     /**
-     * @param string $a_job_id
-     *
-     * @return ilCronJob|null
+     * @inheritDoc
      */
-    public function getCronJobInstance(/*string*/
-        $a_job_id
-    )/*: ?ilCronJob*/
+    public function getCronJobInstance(/*string*/ $a_job_id)/*: ?ilCronJob*/
     {
-        switch ($a_job_id) {
-            case Job::CRON_JOB_ID:
-                return new Job();
-
-            default:
-                return null;
-        }
+        return self::srPluginInfosFetcher()->jobs()->factory()->newInstanceById($a_job_id);
     }
 
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
-    public function updateLanguages($a_lang_keys = null)
+    public function updateLanguages(/*?array*/ $a_lang_keys = null)/*:void*/
     {
         parent::updateLanguages($a_lang_keys);
 
-        LibraryLanguageInstaller::getInstance()->withPlugin(self::plugin())->withLibraryLanguageDirectory(__DIR__
-            . "/../vendor/srag/removeplugindataconfirm/lang")->updateLanguages();
+        $this->installRemovePluginDataConfirmLanguages();
     }
 
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     protected function deleteData()/*: void*/
     {
-        self::dic()->database()->dropTable(Config::TABLE_NAME, false);
+        self::srPluginInfosFetcher()->dropTables();
     }
 }

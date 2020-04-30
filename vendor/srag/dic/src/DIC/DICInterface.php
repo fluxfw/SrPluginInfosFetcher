@@ -24,6 +24,7 @@ use ILIAS\DI\BackgroundTaskServices;
 use ILIAS\DI\Container;
 use ILIAS\DI\HTTPServices;
 use ILIAS\DI\LoggingServices;
+use ILIAS\DI\RBACServices;
 use ILIAS\DI\UIServices;
 use ILIAS\Filesystem\Filesystems;
 use ILIAS\FileUpload\FileUpload;
@@ -305,6 +306,8 @@ interface DICInterface
 
     /**
      * @return ilTemplate|ilGlobalTemplateInterface
+     *
+     * @deprecated Please use `self::dic()->ui()->mainTemplate()`
      */
     public function mainTemplate();/*: ilGlobalTemplateInterface*/
 
@@ -357,19 +360,31 @@ interface DICInterface
 
 
     /**
+     * @return RBACServices
+     */
+    public function rbac() : RBACServices;
+
+
+    /**
      * @return ilRbacAdmin
+     *
+     * @deprecated Please use `self::dic()->rba()->admin()`
      */
     public function rbacadmin() : ilRbacAdmin;
 
 
     /**
      * @return ilRbacReview
+     *
+     * @deprecated Please use `self::dic()->rba()->review()`
      */
     public function rbacreview() : ilRbacReview;
 
 
     /**
      * @return ilRbacSystem
+     *
+     * @deprecated Please use `self::dic()->rba()->system()`
      */
     public function rbacsystem() : ilRbacSystem;
 

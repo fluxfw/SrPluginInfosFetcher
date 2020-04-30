@@ -23,9 +23,10 @@ final class DataCollections
 
     use DICTrait;
     use SrPluginInfosFetcherTrait;
+
     const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
     /**
-     * @var self
+     * @var self|null
      */
     protected static $instance = null;
 
@@ -182,6 +183,11 @@ final class DataCollections
      */
     private function getValueFromField(string $property, ilDclBaseRecordFieldModel $field) : string
     {
+        if (empty($field->getValue()) || is_array($field->getValue()) && isset($field->getValue()["warning"])) {
+            // Invalid value
+            return "";
+        }
+
         // Tricks with getPlainText to get correct reference values such ilias_min_version or ilias_max_version
         return strval($field->getPlainText());
     }
@@ -285,16 +291,23 @@ final class DataCollections
         $value = $new_plugin->getProperty($property);
 
         if ($value !== $old_plugin->getProperty($property)) {
+            // Tricks with excel to set correct reference values such ilias_min_version or ilias_max_version
             $excel = new ilExcel();
 
             $excel->addSheet("");
 
             $excel->setCell(0, 0, $value);
 
-            // Tricks with excel to set correct reference values such ilias_min_version or ilias_max_version
-            $value = $field->getValueFromExcel($excel, 0, 0);
+            $value2 = $field->getValueFromExcel($excel, 0, 0);
 
-            $field->setValue($value);
+            if (empty($value2) && substr_count($value, ".") === 0 && intval($value) >= 6) {
+                // Try aigan for find incorrect ILIAS 6 version syntax
+                $excel->setCell(0, 0, $value . ".0");
+
+                $value2 = $field->getValueFromExcel($excel, 0, 0);
+            }
+
+            $field->setValue($value2);
 
             return true;
         }

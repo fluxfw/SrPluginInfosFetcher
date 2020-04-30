@@ -1,26 +1,27 @@
 <?php
 
-namespace srag\Plugins\SrPluginInfosFetcher\Access;
+namespace srag\Plugins\SrPluginInfosFetcher\Job;
 
 use ilSrPluginInfosFetcherPlugin;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 
 /**
- * Class Access
+ * Class Repository
  *
- * @package srag\Plugins\SrPluginInfosFetcher\Access
+ * @package srag\Plugins\SrPluginInfosFetcher\Job
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
-final class Access
+final class Repository
 {
 
     use DICTrait;
     use SrPluginInfosFetcherTrait;
+
     const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
     /**
-     * @var self
+     * @var self|null
      */
     protected static $instance = null;
 
@@ -39,9 +40,36 @@ final class Access
 
 
     /**
-     * Access constructor
+     * Repository constructor
      */
     private function __construct()
+    {
+
+    }
+
+
+    /**
+     * @internal
+     */
+    public function dropTables()/*: void*/
+    {
+
+    }
+
+
+    /**
+     * @return Factory
+     */
+    public function factory() : Factory
+    {
+        return Factory::getInstance();
+    }
+
+
+    /**
+     * @internal
+     */
+    public function installTables()/*: void*/
     {
 
     }

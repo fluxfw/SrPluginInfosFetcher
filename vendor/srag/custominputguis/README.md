@@ -19,6 +19,8 @@ Tip: Because of multiple autoloaders of plugins, it could be, that different ver
 So I recommand to use [srag/librariesnamespacechanger](https://packagist.org/packages/srag/librariesnamespacechanger) in your plugin.
 
 ### Input-GUI's
+* [AbstractFormBuilder](./src/FormBuilder/doc/AbstractFormBuilder.md)
+* [AjaxCheckbox](./src/AjaxCheckbox/doc/AjaxCheckbox.md)
 * [CheckboxInputGUI](./src/CheckboxInputGUI/doc/CheckboxInputGUI.md)
 * [DateDurationInputGUI](./src/DateDurationInputGUI/doc/DateDurationInputGUI.md)
 * [GlyphGUI](./src/GlyphGUI/doc/GlyphGUI.md)
@@ -26,8 +28,9 @@ So I recommand to use [srag/librariesnamespacechanger](https://packagist.org/pac
 * [InputGUIWrapperUIInputComponent](./src/InputGUIWrapperUIInputComponent/doc/InputGUIWrapperUIInputComponent.md)
 * [LearningProgressPieUI](./src/LearningProgressPieUI/doc/LearningProgressPieUI.md)
 * [MultilangualTabsInputGUI](./src/TabsInputGUI/doc/MultilangualTabsInputGUI.md)
-* [MultiLineInputGUI](./src/MultiLineInputGUI/doc/MultiLineInputGUI.md)
 * [MultiLineNewInputGUI](./src/MultiLineNewInputGUI/doc/MultiLineNewInputGUI.md)
+* [MultiLineInputGUI](./src/MultiLineInputGUI/doc/MultiLineInputGUI.md)
+* [MultiSelectSearchNewInputGUI](./src/MultiSelectSearchNewInputGUI/doc/MultiSelectSearchNewInputGUI.md)
 * [MultiSelectSearchInputGUI](./src/MultiSelectSearchInputGUI/doc/MultiSelectSearchInputGUI.md)
 * [MultiSelectSearchInput2GUI](./src/MultiSelectSearchInputGUI/doc/MultiSelectSearchInput2GUI.md)
 * [NumberInputGUI](./src/NumberInputGUI/doc/NumberInputGUI.md)
@@ -49,7 +52,7 @@ So I recommand to use [srag/librariesnamespacechanger](https://packagist.org/pac
 
 ### Requirements
 * ILIAS 5.3 or ILIAS 5.4
-* PHP >=5.6
+* PHP >=7.0
 
 ### Adjustment suggestions
 * External users can report suggestions and bugs at https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_LINP

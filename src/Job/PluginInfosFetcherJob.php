@@ -6,29 +6,30 @@ use ilCronJob;
 use ilCronJobResult;
 use ilSrPluginInfosFetcherPlugin;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
-use srag\Plugins\SrPluginInfosFetcher\Config\Config;
+use srag\Plugins\SrPluginInfosFetcher\Config\Form\FormBuilder;
 use srag\Plugins\SrPluginInfosFetcher\Info\PluginInfo;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 
 /**
- * Class Job
+ * Class PluginInfosFetcherJob
  *
  * @package srag\Plugins\SrPluginInfosFetcher\Job
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
-class Job extends ilCronJob
+class PluginInfosFetcherJob extends ilCronJob
 {
 
     use DICTrait;
     use SrPluginInfosFetcherTrait;
+
     const CRON_JOB_ID = ilSrPluginInfosFetcherPlugin::PLUGIN_ID;
     const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
-    const LANG_MODULE_CRON = "cron";
+    const LANG_MODULE = "cron";
 
 
     /**
-     * Job constructor
+     * PluginInfosFetcherJob constructor
      */
     public function __construct()
     {
@@ -37,9 +38,7 @@ class Job extends ilCronJob
 
 
     /**
-     * Get id
-     *
-     * @return string
+     * @inheritDoc
      */
     public function getId() : string
     {
@@ -48,7 +47,7 @@ class Job extends ilCronJob
 
 
     /**
-     * @return string
+     * @inheritDoc
      */
     public function getTitle() : string
     {
@@ -57,7 +56,7 @@ class Job extends ilCronJob
 
 
     /**
-     * @return string
+     * @inheritDoc
      */
     public function getDescription() : string
     {
@@ -66,9 +65,7 @@ class Job extends ilCronJob
 
 
     /**
-     * Is to be activated on "installation"
-     *
-     * @return boolean
+     * @inheritDoc
      */
     public function hasAutoActivation() : bool
     {
@@ -77,9 +74,7 @@ class Job extends ilCronJob
 
 
     /**
-     * Can the schedule be configured?
-     *
-     * @return boolean
+     * @inheritDoc
      */
     public function hasFlexibleSchedule() : bool
     {
@@ -88,9 +83,7 @@ class Job extends ilCronJob
 
 
     /**
-     * Get schedule type
-     *
-     * @return int
+     * @inheritDoc
      */
     public function getDefaultScheduleType() : int
     {
@@ -99,36 +92,32 @@ class Job extends ilCronJob
 
 
     /**
-     * Get schedule value
-     *
-     * @return int|array
+     * @inheritDoc
      */
-    public function getDefaultScheduleValue() : int
+    public function getDefaultScheduleValue()/*:?int*/
     {
         return 1;
     }
 
 
     /**
-     * Run job
-     *
-     * @return ilCronJobResult
+     * @inheritDoc
      */
     public function run() : ilCronJobResult
     {
         $result = new ilCronJobResult();
 
-        $data_collection_table_id = Config::getField(Config::KEY_DATA_COLLECTION_TABLE_ID);
+        $data_collection_table_id = self::srPluginInfosFetcher()->config()->getValue(FormBuilder::KEY_DATA_COLLECTION_TABLE_ID);
 
-        $plugins = self::ilias()->dataCollections()->getPlugins($data_collection_table_id);
+        $plugins = self::srPluginInfosFetcher()->ilias()->dataCollections()->getPlugins($data_collection_table_id);
 
         $updated_plugins = $this->fetchPluginInfos($plugins);
 
-        $updated_plugins_count = self::ilias()->dataCollections()->updatePlugins($data_collection_table_id, $updated_plugins);
+        $updated_plugins_count = self::srPluginInfosFetcher()->ilias()->dataCollections()->updatePlugins($data_collection_table_id, $updated_plugins);
 
         $result->setStatus(ilCronJobResult::STATUS_OK);
 
-        $result->setMessage(self::plugin()->translate("updated_status", self::LANG_MODULE_CRON, [$updated_plugins_count]));
+        $result->setMessage(self::plugin()->translate("updated_status", self::LANG_MODULE, [$updated_plugins_count]));
 
         return $result;
     }
@@ -148,7 +137,7 @@ class Job extends ilCronJob
 
             $new_plugin = clone $plugin;
 
-            $plugin_php = self::gitFetcher($new_plugin->getGitUrl())->fetchFile("plugin.php");
+            $plugin_php = self::srPluginInfosFetcher()->gitFetcher($new_plugin->getGitUrl())->fetchFile("plugin.php");
 
             if ($plugin_php !== null) {
                 if ($this->checkVersion($plugin_php, "version", "plugin_version", $new_plugin)) {

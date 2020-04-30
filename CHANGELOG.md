@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.3.0]
+- Supports new ILIAS 6 version syntax
+- ILIAS 6 support
+- Remove ILIAS 5.3 support
+
 ## [0.2.0]
 - Some improvments
 
