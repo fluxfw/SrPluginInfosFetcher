@@ -183,6 +183,11 @@ final class DataCollections
      */
     private function getValueFromField(string $property, ilDclBaseRecordFieldModel $field) : string
     {
+        if (empty($field->getValue()) || is_array($field->getValue()) && isset($field->getValue()["warning"])) {
+            // Invalid value
+            return "";
+        }
+
         // Tricks with getPlainText to get correct reference values such ilias_min_version or ilias_max_version
         return strval($field->getPlainText());
     }
@@ -295,7 +300,7 @@ final class DataCollections
 
             $value2 = $field->getValueFromExcel($excel, 0, 0);
 
-            if (empty($value2) && substr_count($value, ".") === 0) {
+            if (empty($value2) && substr_count($value, ".") === 0 && intval($value) >= 6) {
                 // Try aigan for find incorrect ILIAS 6 version syntax
                 $excel->setCell(0, 0, $value . ".0");
 

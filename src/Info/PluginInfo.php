@@ -133,7 +133,10 @@ class PluginInfo
         } else {
             if (substr_count($version, ".") === 1) {
                 // ILIAS 6 version syntax uses only one part x
-                $version = explode(".", $version)[0];
+                $version2 = explode(".", $version)[0];
+                if (intval($version2) >= 6) {
+                    $version = $version2;
+                }
             }
         }
 
