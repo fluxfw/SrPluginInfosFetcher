@@ -1,10 +1,14 @@
 This is an OpenSource project by studer + raimann ag, CH-Burgdorf (https://studer-raimann.ch)
 
-Cron job plugin for http://plugins.ilias.de to keep plugin's version, min_ilias_version and max_ilias_version up to date
+## Description
+See in [doc/DESCRIPTION.md](./doc/DESCRIPTION.md)
+
+## Documentation
+See in [doc/DOCUMENTATION.md](./doc/DOCUMENTATION.md)
 
 ## Installation
 
-### Install SrPluginInfosFetcher-Plugin
+### Install SrPluginInfosFetcher Plugin
 Start at your ILIAS root directory
 ```bash
 mkdir -p Customizing/global/plugins/Services/Cron/CronHook
@@ -12,9 +16,6 @@ cd Customizing/global/plugins/Services/Cron/CronHook
 git clone https://github.com/studer-raimann/SrPluginInfosFetcher.git SrPluginInfosFetcher
 ```
 Update and activate the plugin in the ILIAS Plugin Administration
-
-### Some screenshots
-TODO
 
 ### Requirements
 * ILIAS 5.3 or ILIAS 5.4
