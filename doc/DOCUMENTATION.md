@@ -1,1 +1,1 @@
-## SrPluginInfosFetcher Documentation
+# SrPluginInfosFetcher ILIAS Plugin Documentation
