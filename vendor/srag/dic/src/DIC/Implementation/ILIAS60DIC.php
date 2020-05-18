@@ -17,6 +17,7 @@ use ilCtrlStructureReader;
 use ilDBInterface;
 use ilErrorHandling;
 use ilExerciseFactory;
+use ilFavouritesDBRepository;
 use ilGlobalTemplateInterface;
 use ilHelpGUI;
 use ILIAS;
@@ -200,6 +201,15 @@ final class ILIAS60DIC extends AbstractDIC
     public function exercise() : ilExerciseFactory
     {
         return $this->dic->exercise();
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function favourites() : ilFavouritesDBRepository
+    {
+        return new ilFavouritesDBRepository();
     }
 
 
@@ -466,6 +476,15 @@ final class ILIAS60DIC extends AbstractDIC
     /**
      * @inheritDoc
      */
+    public function repositoryTree() : ilTree
+    {
+        return $this->dic->repositoryTree();
+    }
+
+
+    /**
+     * @inheritDoc
+     */
     public function session() : Session
     {
         return $this->dic["sess"];
@@ -519,10 +538,12 @@ final class ILIAS60DIC extends AbstractDIC
 
     /**
      * @inheritDoc
+     *
+     * @deprecated Please use `self::dic()->repositoryTree()`
      */
     public function tree() : ilTree
     {
-        return $this->dic->repositoryTree();
+        return $this->repositoryTree();
     }
 
 

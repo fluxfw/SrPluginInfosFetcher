@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.3.1]
+- Update readme
+
 ## [0.3.0]
 - Supports new ILIAS 6 version syntax
 - ILIAS 6 support

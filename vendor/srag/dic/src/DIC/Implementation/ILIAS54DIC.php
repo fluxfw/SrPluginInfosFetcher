@@ -17,6 +17,7 @@ use ilCtrlStructureReader;
 use ilDBInterface;
 use ilErrorHandling;
 use ilExerciseFactory;
+use ilFavouritesDBRepository;
 use ilHelpGUI;
 use ILIAS;
 use ILIAS\DI\BackgroundTaskServices;
@@ -201,6 +202,15 @@ final class ILIAS54DIC extends AbstractDIC
     public function exercise() : ilExerciseFactory
     {
         throw new DICException("ilExerciseFactory not exists in ILIAS 5.4 or below!");
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function favourites() : ilFavouritesDBRepository
+    {
+        throw new DICException("ilFavouritesDBRepository not exists in ILIAS 5.4 or below!");
     }
 
 
@@ -467,6 +477,15 @@ final class ILIAS54DIC extends AbstractDIC
     /**
      * @inheritDoc
      */
+    public function repositoryTree() : ilTree
+    {
+        return $this->dic->repositoryTree();
+    }
+
+
+    /**
+     * @inheritDoc
+     */
     public function session() : Session
     {
         return $this->dic["sess"];
@@ -520,10 +539,12 @@ final class ILIAS54DIC extends AbstractDIC
 
     /**
      * @inheritDoc
+     *
+     * @deprecated Please use `self::dic()->repositoryTree()`
      */
     public function tree() : ilTree
     {
-        return $this->dic->repositoryTree();
+        return $this->repositoryTree();
     }
 
 
