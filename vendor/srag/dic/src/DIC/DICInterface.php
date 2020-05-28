@@ -9,7 +9,9 @@ use ilAsqFactory;
 use ilAuthSession;
 use ilBenchmark;
 use ilBookingManagerService;
+use ilBookingReservationDBRepositoryFactory;
 use ilBrowser;
+use ilCertificateActiveValidator;
 use ilComponentLogger;
 use ilConditionService;
 use ilCtrl;
@@ -31,6 +33,10 @@ use ILIAS\Filesystem\Filesystems;
 use ILIAS\FileUpload\FileUpload;
 use ILIAS\GlobalScreen\Services as GlobalScreenService;
 use ILIAS\Refinery\Factory as RefineryFactory;
+use ILIAS\UI\Implementation\Render\JavaScriptBinding;
+use ILIAS\UI\Implementation\Render\Loader;
+use ILIAS\UI\Implementation\Render\ResourceRegistry;
+use ILIAS\UI\Implementation\Render\TemplateFactory;
 use ilIniFile;
 use ilLanguage;
 use ilLearningHistoryService;
@@ -39,11 +45,13 @@ use ilLoggerFactory;
 use ilMailMimeSenderFactory;
 use ilMailMimeTransportFactory;
 use ilMainMenuGUI;
+use ilMMItemRepository;
 use ilNavigationHistory;
 use ilNewsService;
 use ilObjectDataCache;
 use ilObjectDefinition;
 use ilObjectService;
+use ilObjUseBookDBRepository;
 use ilObjUser;
 use ilPluginAdmin;
 use ilRbacAdmin;
@@ -120,9 +128,35 @@ interface DICInterface
 
 
     /**
+     * @return ilObjUseBookDBRepository
+     *
+     * @throws DICException ilObjUseBookDBRepository not exists in ILIAS 5.4 or below!
+     *
+     * @since ILIAS 6
+     */
+    public function bookingObjUseBook() : ilObjUseBookDBRepository;
+
+
+    /**
+     * @return ilBookingReservationDBRepositoryFactory
+     *
+     * @throws DICException ilBookingReservationDBRepositoryFactory not exists in ILIAS 5.4 or below!
+     *
+     * @since ILIAS 6
+     */
+    public function bookingReservation() : ilBookingReservationDBRepositoryFactory;
+
+
+    /**
      * @return ilBrowser
      */
     public function browser() : ilBrowser;
+
+
+    /**
+     * @return ilCertificateActiveValidator
+     */
+    public function certificateActiveValidator() : ilCertificateActiveValidator;
 
 
     /**
@@ -238,6 +272,12 @@ interface DICInterface
 
 
     /**
+     * @return JavaScriptBinding
+     */
+    public function javaScriptBinding() : JavaScriptBinding;
+
+
+    /**
      * @return ilLanguage
      */
     public function language() : ilLanguage;
@@ -291,6 +331,12 @@ interface DICInterface
      * @return ilMainMenuGUI
      */
     public function mainMenu() : ilMainMenuGUI;
+
+
+    /**
+     * @return ilMMItemRepository
+     */
+    public function mainMenuItem() : ilMMItemRepository;
 
 
     /**
@@ -381,9 +427,21 @@ interface DICInterface
 
 
     /**
+     * @return Loader
+     */
+    public function rendererLoader() : Loader;
+
+
+    /**
      * @return ilTree
      */
     public function repositoryTree() : ilTree;
+
+
+    /**
+     * @return ResourceRegistry
+     */
+    public function resourceRegistry() : ResourceRegistry;
 
 
     /**
@@ -418,6 +476,12 @@ interface DICInterface
      * @since ILIAS 6
      */
     public function task() : ilTaskService;
+
+
+    /**
+     * @return TemplateFactory
+     */
+    public function templateFactory() : TemplateFactory;
 
 
     /**

@@ -2,6 +2,8 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
+use ILIAS\DI\Container;
+use srag\CustomInputGUIs\SrPluginInfosFetcher\Loader\CustomInputGUIsLoaderDetector;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 use srag\RemovePluginDataConfirm\SrPluginInfosFetcher\PluginUninstallTrait;
 
@@ -91,5 +93,14 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
     protected function deleteData()/*: void*/
     {
         self::srPluginInfosFetcher()->dropTables();
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function exchangeUIRendererAfterInitialization(Container $dic) : Closure
+    {
+        return CustomInputGUIsLoaderDetector::exchangeUIRendererAfterInitialization();
     }
 }

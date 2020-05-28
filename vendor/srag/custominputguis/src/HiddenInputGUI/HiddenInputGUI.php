@@ -3,6 +3,7 @@
 namespace srag\CustomInputGUIs\SrPluginInfosFetcher\HiddenInputGUI;
 
 use ilHiddenInputGUI;
+use srag\CustomInputGUIs\SrPluginInfosFetcher\Template\Template;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
 
 /**
@@ -26,5 +27,18 @@ class HiddenInputGUI extends ilHiddenInputGUI
         $a_postvar = ""
     ) {
         parent::__construct($a_postvar);
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function render() : string
+    {
+        $tpl = new Template("Services/Form/templates/default/tpl.property_form.html", true, true);
+
+        $this->insert($tpl);
+
+        return self::output()->getHTML($tpl);
     }
 }
