@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.3.2]
+- Fixes
+
 ## [0.3.1]
 - Update readme
 
