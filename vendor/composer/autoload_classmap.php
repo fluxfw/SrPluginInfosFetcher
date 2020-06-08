@@ -108,6 +108,7 @@ return array(
     'srag\\DIC\\SrPluginInfosFetcher\\Version\\Version' => $vendorDir . '/srag/dic/src/Version/Version.php',
     'srag\\DIC\\SrPluginInfosFetcher\\Version\\VersionInterface' => $vendorDir . '/srag/dic/src/Version/VersionInterface.php',
     'srag\\GitCurl\\SrPluginInfosFetcher\\GitCurl' => $vendorDir . '/srag/gitcurl/src/GitCurl.php',
+    'srag\\LibrariesNamespaceChanger\\GeneratePluginPhp' => $vendorDir . '/srag/librariesnamespacechanger/src/GeneratePluginPhp.php',
     'srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger' => $vendorDir . '/srag/librariesnamespacechanger/src/LibrariesNamespaceChanger.php',
     'srag\\LibrariesNamespaceChanger\\PHP72Backport' => $vendorDir . '/srag/librariesnamespacechanger/src/PHP72Backport.php',
     'srag\\LibrariesNamespaceChanger\\PHP7Backport' => $vendorDir . '/srag/librariesnamespacechanger/src/PHP7Backport.php',
