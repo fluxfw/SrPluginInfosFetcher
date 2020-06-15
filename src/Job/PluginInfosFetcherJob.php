@@ -24,8 +24,8 @@ class PluginInfosFetcherJob extends ilCronJob
     use SrPluginInfosFetcherTrait;
 
     const CRON_JOB_ID = ilSrPluginInfosFetcherPlugin::PLUGIN_ID;
-    const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
     const LANG_MODULE = "cron";
+    const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
 
 
     /**
@@ -34,51 +34,6 @@ class PluginInfosFetcherJob extends ilCronJob
     public function __construct()
     {
 
-    }
-
-
-    /**
-     * @inheritDoc
-     */
-    public function getId() : string
-    {
-        return self::CRON_JOB_ID;
-    }
-
-
-    /**
-     * @inheritDoc
-     */
-    public function getTitle() : string
-    {
-        return ilSrPluginInfosFetcherPlugin::PLUGIN_NAME;
-    }
-
-
-    /**
-     * @inheritDoc
-     */
-    public function getDescription() : string
-    {
-        return "";
-    }
-
-
-    /**
-     * @inheritDoc
-     */
-    public function hasAutoActivation() : bool
-    {
-        return true;
-    }
-
-
-    /**
-     * @inheritDoc
-     */
-    public function hasFlexibleSchedule() : bool
-    {
-        return true;
     }
 
 
@@ -103,6 +58,51 @@ class PluginInfosFetcherJob extends ilCronJob
     /**
      * @inheritDoc
      */
+    public function getDescription() : string
+    {
+        return "";
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function getId() : string
+    {
+        return self::CRON_JOB_ID;
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function getTitle() : string
+    {
+        return ilSrPluginInfosFetcherPlugin::PLUGIN_NAME;
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function hasAutoActivation() : bool
+    {
+        return true;
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function hasFlexibleSchedule() : bool
+    {
+        return true;
+    }
+
+
+    /**
+     * @inheritDoc
+     */
     public function run() : ilCronJobResult
     {
         $result = new ilCronJobResult();
@@ -120,6 +120,62 @@ class PluginInfosFetcherJob extends ilCronJob
         $result->setMessage(self::plugin()->translate("updated_status", self::LANG_MODULE, [$updated_plugins_count]));
 
         return $result;
+    }
+
+
+    /**
+     * @param string     $plugin_php
+     * @param string     $variable
+     * @param string     $property
+     * @param PluginInfo $plugin
+     *
+     * @return bool
+     */
+    private function checkText(string $plugin_php, string $variable, string $property, PluginInfo $plugin) : bool
+    {
+        $text = [];
+
+        preg_match('/\\$' . $variable . '\\s*=\\s*["\']{1}(.+)["\']{1}\\s*;/', $plugin_php, $text);
+
+        if (is_array($text) && count($text) > 1) {
+            $text = $text[1];
+
+            if (is_string($text) && !empty($text)) {
+                if ($plugin->setProperty($property, $text)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+
+    /**
+     * @param string     $plugin_php
+     * @param string     $variable
+     * @param string     $property
+     * @param PluginInfo $plugin
+     *
+     * @return bool
+     */
+    private function checkVersion(string $plugin_php, string $variable, string $property, PluginInfo $plugin) : bool
+    {
+        $version = [];
+
+        preg_match('/\\$' . $variable . '\\s*=\\s*["\']{1}([0-9\\.]+)["\']{1}\\s*;/', $plugin_php, $version);
+
+        if (is_array($version) && count($version) > 1) {
+            $version = $version[1];
+
+            if (is_string($version) && !empty($version)) {
+                if ($plugin->setProperty($property, $version)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
 
@@ -166,61 +222,5 @@ class PluginInfosFetcherJob extends ilCronJob
         }
 
         return $updated_plugins;
-    }
-
-
-    /**
-     * @param string     $plugin_php
-     * @param string     $variable
-     * @param string     $property
-     * @param PluginInfo $plugin
-     *
-     * @return bool
-     */
-    private function checkVersion(string $plugin_php, string $variable, string $property, PluginInfo $plugin) : bool
-    {
-        $version = [];
-
-        preg_match('/\\$' . $variable . '\\s*=\\s*["\']{1}([0-9\\.]+)["\']{1}\\s*;/', $plugin_php, $version);
-
-        if (is_array($version) && count($version) > 1) {
-            $version = $version[1];
-
-            if (is_string($version) && !empty($version)) {
-                if ($plugin->setProperty($property, $version)) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-
-
-    /**
-     * @param string     $plugin_php
-     * @param string     $variable
-     * @param string     $property
-     * @param PluginInfo $plugin
-     *
-     * @return bool
-     */
-    private function checkText(string $plugin_php, string $variable, string $property, PluginInfo $plugin) : bool
-    {
-        $text = [];
-
-        preg_match('/\\$' . $variable . '\\s*=\\s*["\']{1}(.+)["\']{1}\\s*;/', $plugin_php, $text);
-
-        if (is_array($text) && count($text) > 1) {
-            $text = $text[1];
-
-            if (is_string($text) && !empty($text)) {
-                if ($plugin->setProperty($property, $text)) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
     }
 }

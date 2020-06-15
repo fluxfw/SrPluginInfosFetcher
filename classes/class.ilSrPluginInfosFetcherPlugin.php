@@ -18,13 +18,22 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
     use PluginUninstallTrait;
     use SrPluginInfosFetcherTrait;
 
+    const PLUGIN_CLASS_NAME = self::class;
     const PLUGIN_ID = "srplinfe";
     const PLUGIN_NAME = "SrPluginInfosFetcher";
-    const PLUGIN_CLASS_NAME = self::class;
     /**
      * @var self|null
      */
     protected static $instance = null;
+
+
+    /**
+     * ilSrPluginInfosFetcherPlugin constructor
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
 
     /**
@@ -41,29 +50,11 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
 
 
     /**
-     * ilSrPluginInfosFetcherPlugin constructor
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-
-    /**
      * @inheritDoc
      */
-    public function getPluginName() : string
+    public function exchangeUIRendererAfterInitialization(Container $dic) : Closure
     {
-        return self::PLUGIN_NAME;
-    }
-
-
-    /**
-     * @inheritDoc
-     */
-    public function getCronJobInstances() : array
-    {
-        return self::srPluginInfosFetcher()->jobs()->factory()->newInstances();
+        return CustomInputGUIsLoaderDetector::exchangeUIRendererAfterInitialization();
     }
 
 
@@ -79,9 +70,18 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
     /**
      * @inheritDoc
      */
-    protected function shouldUseOneUpdateStepOnly() : bool
+    public function getCronJobInstances() : array
     {
-        return true;
+        return self::srPluginInfosFetcher()->jobs()->factory()->newInstances();
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function getPluginName() : string
+    {
+        return self::PLUGIN_NAME;
     }
 
 
@@ -108,8 +108,8 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
     /**
      * @inheritDoc
      */
-    public function exchangeUIRendererAfterInitialization(Container $dic) : Closure
+    protected function shouldUseOneUpdateStepOnly() : bool
     {
-        return CustomInputGUIsLoaderDetector::exchangeUIRendererAfterInitialization();
+        return true;
     }
 }

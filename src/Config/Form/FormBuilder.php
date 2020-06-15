@@ -19,8 +19,8 @@ class FormBuilder extends AbstractFormBuilder
 
     use SrPluginInfosFetcherTrait;
 
-    const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
     const KEY_DATA_COLLECTION_TABLE_ID = "data_collection_table_id";
+    const PLUGIN_CLASS_NAME = ilSrPluginInfosFetcherPlugin::class;
 
 
     /**
