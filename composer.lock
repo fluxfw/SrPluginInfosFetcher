@@ -54,16 +54,16 @@
         },
         {
             "name": "srag/custominputguis",
-            "version": "v0.36.0",
+            "version": "v0.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/studer-raimann/CustomInputGUIs.git",
-                "reference": "e3cd856796c04ad5b9b3ba7e5ef2375f0a8894b0"
+                "reference": "0a0819d962d126f940b083c59a8ad99646a358af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/studer-raimann/CustomInputGUIs/zipball/e3cd856796c04ad5b9b3ba7e5ef2375f0a8894b0",
-                "reference": "e3cd856796c04ad5b9b3ba7e5ef2375f0a8894b0",
+                "url": "https://api.github.com/repos/studer-raimann/CustomInputGUIs/zipball/0a0819d962d126f940b083c59a8ad99646a358af",
+                "reference": "0a0819d962d126f940b083c59a8ad99646a358af",
                 "shasum": ""
             },
             "require": {
@@ -73,7 +73,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "srag\\CustomInputGUIs\\SrPluginInfosFetcher\\": "src/"
+                    "srag\\CustomInputGUIs\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -97,7 +97,7 @@
                 "input",
                 "table"
             ],
-            "time": "2020-06-08T06:27:00+00:00"
+            "time": "2020-07-22T13:00:47+00:00"
         },
         {
             "name": "srag/dic",
@@ -146,16 +146,16 @@
         },
         {
             "name": "srag/gitcurl",
-            "version": "v0.1.4",
+            "version": "v0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/studer-raimann/GitCurl.git",
-                "reference": "048757024d80f2d57943f2bcbd1e589c362809e4"
+                "reference": "0ac52b277a1bd7eca699a4a27efaeb34939c0767"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/studer-raimann/GitCurl/zipball/048757024d80f2d57943f2bcbd1e589c362809e4",
-                "reference": "048757024d80f2d57943f2bcbd1e589c362809e4",
+                "url": "https://api.github.com/repos/studer-raimann/GitCurl/zipball/0ac52b277a1bd7eca699a4a27efaeb34939c0767",
+                "reference": "0ac52b277a1bd7eca699a4a27efaeb34939c0767",
                 "shasum": ""
             },
             "require": {
@@ -165,7 +165,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "srag\\GitCurl\\SrPluginInfosFetcher\\": "src/"
+                    "srag\\GitCurl\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -187,20 +187,20 @@
                 "curl",
                 "git"
             ],
-            "time": "2020-05-13T05:59:03+00:00"
+            "time": "2020-07-07T11:25:26+00:00"
         },
         {
             "name": "srag/librariesnamespacechanger",
-            "version": "v0.9.3",
+            "version": "v0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/studer-raimann/LibrariesNamespaceChanger.git",
-                "reference": "f1d8d9ce97723b1bc5850dcbb2031bca38fe6030"
+                "reference": "35efb3557ea2d58ae3ea6133c2d89b3e41cc8564"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/studer-raimann/LibrariesNamespaceChanger/zipball/f1d8d9ce97723b1bc5850dcbb2031bca38fe6030",
-                "reference": "f1d8d9ce97723b1bc5850dcbb2031bca38fe6030",
+                "url": "https://api.github.com/repos/studer-raimann/LibrariesNamespaceChanger/zipball/35efb3557ea2d58ae3ea6133c2d89b3e41cc8564",
+                "reference": "35efb3557ea2d58ae3ea6133c2d89b3e41cc8564",
                 "shasum": ""
             },
             "require": {
@@ -230,7 +230,7 @@
                 "ILIAS",
                 "libraries"
             ],
-            "time": "2020-06-09T10:27:35+00:00"
+            "time": "2020-08-05T09:26:53+00:00"
         },
         {
             "name": "srag/removeplugindataconfirm",
