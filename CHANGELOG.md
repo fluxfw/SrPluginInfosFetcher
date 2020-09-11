@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.3.4]
+- Fix `checkText` may contains `"`
+
 ## [0.3.3]
 - Dev tools
 
