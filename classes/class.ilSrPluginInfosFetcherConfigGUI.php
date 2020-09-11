@@ -2,6 +2,7 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
+use srag\DIC\SrPluginInfosFetcher\DevTools\DevToolsCtrl;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
 use srag\Plugins\SrPluginInfosFetcher\Config\ConfigCtrl;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
@@ -10,6 +11,8 @@ use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
  * Class ilSrPluginInfosFetcherConfigGUI
  *
  * @author studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
+ *
+ * @ilCtrl_isCalledBy srag\DIC\SrPluginInfosFetcher\DevTools\DevToolsCtrl: ilSrPluginInfosFetcherConfigGUI
  */
 class ilSrPluginInfosFetcherConfigGUI extends ilPluginConfigGUI
 {
@@ -44,6 +47,10 @@ class ilSrPluginInfosFetcherConfigGUI extends ilPluginConfigGUI
                 self::dic()->ctrl()->forwardCommand(new ConfigCtrl());
                 break;
 
+            case strtolower(DevToolsCtrl::class):
+                self::dic()->ctrl()->forwardCommand(new DevToolsCtrl($this, self::plugin()));
+                break;
+
             default:
                 $cmd = self::dic()->ctrl()->getCmd();
 
@@ -75,6 +82,8 @@ class ilSrPluginInfosFetcherConfigGUI extends ilPluginConfigGUI
     protected function setTabs()/*: void*/
     {
         ConfigCtrl::addTabs();
+
+        DevToolsCtrl::addTabs(self::plugin());
 
         self::dic()->locator()->addItem(ilSrPluginInfosFetcherPlugin::PLUGIN_NAME, self::dic()->ctrl()->getLinkTarget($this, self::CMD_CONFIGURE));
     }

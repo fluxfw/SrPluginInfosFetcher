@@ -4,6 +4,7 @@ require_once __DIR__ . "/../vendor/autoload.php";
 
 use ILIAS\DI\Container;
 use srag\CustomInputGUIs\SrPluginInfosFetcher\Loader\CustomInputGUIsLoaderDetector;
+use srag\DIC\SrPluginInfosFetcher\DevTools\DevToolsCtrl;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 use srag\RemovePluginDataConfirm\SrPluginInfosFetcher\PluginUninstallTrait;
 
@@ -93,6 +94,8 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
         parent::updateLanguages($a_lang_keys);
 
         $this->installRemovePluginDataConfirmLanguages();
+
+        DevToolsCtrl::installLanguages(self::plugin());
     }
 
 
