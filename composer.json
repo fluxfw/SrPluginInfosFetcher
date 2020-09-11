@@ -1,6 +1,14 @@
 {
   "name": "srag/plugins/srplugininfosfetcher",
-  "description": "Cron job plugin for http://plugins.ilias.de to keep plugin's version, min_ilias_version and max_ilias_version up to date",
+  "description": "",
+  "version": "0.3.3",
+  "ilias_plugin": {
+    "id": "srplinfe",
+    "name": "SrPluginInfosFetcher",
+    "ilias_min_version": "5.4.0",
+    "ilias_max_version": "6.999",
+    "slot": "Services/Cron/CronHook"
+  },
   "type": "project",
   "keywords": [
     "ILIAS",
@@ -34,6 +42,9 @@
     },
     "classmap": [
       "classes/"
+    ],
+    "files": [
+      "vendor/srag/dic/src/PHPVersionChecker.php"
     ]
   },
   "config": {
@@ -44,7 +55,9 @@
   "scripts": {
     "pre-autoload-dump": [
       "srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger::rewriteLibrariesNamespaces",
-      "srag\\LibrariesNamespaceChanger\\PHP72Backport::PHP72Backport"
+      "srag\\LibrariesNamespaceChanger\\PHP72Backport::PHP72Backport",
+      "srag\\LibrariesNamespaceChanger\\GeneratePluginPhpAndXml::generatePluginPhpAndXml",
+      "srag\\LibrariesNamespaceChanger\\UpdatePluginReadme::updatePluginReadme"
     ]
   }
 }

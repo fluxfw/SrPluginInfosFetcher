@@ -32,6 +32,15 @@ final class DataCollections
 
 
     /**
+     * DataCollections constructor
+     */
+    private function __construct()
+    {
+
+    }
+
+
+    /**
      * @return self
      */
     public static function getInstance() : self
@@ -41,15 +50,6 @@ final class DataCollections
         }
 
         return self::$instance;
-    }
-
-
-    /**
-     * DataCollections constructor
-     */
-    private function __construct()
-    {
-
     }
 
 
