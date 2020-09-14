@@ -4,27 +4,28 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
+class ComposerStaticInitd8bb46c40a0dbfde8cbfecb37012657c
 {
     public static $files = array (
         '8f5ef0e369859ce50df96a5efc962349' => __DIR__ . '/..' . '/srag/dic/src/PHPVersionChecker.php',
+        '63200d7bb754e527ddab55276020d8f9' => __DIR__ . '/..' . '/srag/dic/src/Ilias7PreWarn.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         's' => 
         array (
-            'srag\\RemovePluginDataConfirm\\SrPluginInfosFetcher\\' => 50,
+            'srag\\RemovePluginDataConfirm\\' => 29,
             'srag\\Plugins\\SrPluginInfosFetcher\\' => 34,
             'srag\\LibrariesNamespaceChanger\\' => 31,
-            'srag\\GitCurl\\SrPluginInfosFetcher\\' => 34,
-            'srag\\DIC\\SrPluginInfosFetcher\\' => 30,
-            'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\' => 42,
-            'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\' => 45,
+            'srag\\GitCurl\\' => 13,
+            'srag\\DIC\\' => 9,
+            'srag\\CustomInputGUIs\\' => 21,
+            'srag\\ActiveRecordConfig\\' => 24,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'srag\\RemovePluginDataConfirm\\SrPluginInfosFetcher\\' => 
+        'srag\\RemovePluginDataConfirm\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/removeplugindataconfirm/src',
         ),
@@ -36,19 +37,19 @@ class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
         array (
             0 => __DIR__ . '/..' . '/srag/librariesnamespacechanger/src',
         ),
-        'srag\\GitCurl\\SrPluginInfosFetcher\\' => 
+        'srag\\GitCurl\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/gitcurl/src',
         ),
-        'srag\\DIC\\SrPluginInfosFetcher\\' => 
+        'srag\\DIC\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/dic/src',
         ),
-        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\' => 
+        'srag\\CustomInputGUIs\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/custominputguis/src',
         ),
-        'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\' => 
+        'srag\\ActiveRecordConfig\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/activerecordconfig/src',
         ),
@@ -131,6 +132,7 @@ class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
         'srag\\DIC\\SrPluginInfosFetcher\\Database\\PdoStatementContextHelper' => __DIR__ . '/..' . '/srag/dic/src/Database/PdoStatementContextHelper.php',
         'srag\\DIC\\SrPluginInfosFetcher\\DevTools\\DevToolsCtrl' => __DIR__ . '/..' . '/srag/dic/src/DevTools/class.DevToolsCtrl.php',
         'srag\\DIC\\SrPluginInfosFetcher\\Exception\\DICException' => __DIR__ . '/..' . '/srag/dic/src/Exception/DICException.php',
+        'srag\\DIC\\SrPluginInfosFetcher\\Ilias7PreWarn' => __DIR__ . '/..' . '/srag/dic/src/Ilias7PreWarn.php',
         'srag\\DIC\\SrPluginInfosFetcher\\Loader\\AbstractLoaderDetector' => __DIR__ . '/..' . '/srag/dic/src/Loader/AbstractLoaderDetector.php',
         'srag\\DIC\\SrPluginInfosFetcher\\Output\\Output' => __DIR__ . '/..' . '/srag/dic/src/Output/Output.php',
         'srag\\DIC\\SrPluginInfosFetcher\\Output\\OutputInterface' => __DIR__ . '/..' . '/srag/dic/src/Output/OutputInterface.php',
@@ -169,9 +171,9 @@ class ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit5e78b5e3f68e5eb703e9a1f90052c86c::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd8bb46c40a0dbfde8cbfecb37012657c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd8bb46c40a0dbfde8cbfecb37012657c::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitd8bb46c40a0dbfde8cbfecb37012657c::$classMap;
 
         }, null, ClassLoader::class);
     }

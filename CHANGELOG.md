@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.3.5]
+- `Ilias7PreWarn`
+
 ## [0.3.4]
 - Fix `checkText` may contains `"`
 
