@@ -93,6 +93,7 @@ return array(
     'srag\\DIC\\SrPluginInfosFetcher\\Util\\LibraryLanguageInstaller' => $vendorDir . '/srag/dic/src/Util/LibraryLanguageInstaller.php',
     'srag\\DIC\\SrPluginInfosFetcher\\Version\\Version' => $vendorDir . '/srag/dic/src/Version/Version.php',
     'srag\\DIC\\SrPluginInfosFetcher\\Version\\VersionInterface' => $vendorDir . '/srag/dic/src/Version/VersionInterface.php',
+    'srag\\DevTools\\SrPluginInfosFetcher\\DevToolsCtrl' => $vendorDir . '/srag/devtools/src/class.DevToolsCtrl.php',
     'srag\\GitCurl\\SrPluginInfosFetcher\\GitCurl' => $vendorDir . '/srag/gitcurl/src/GitCurl.php',
     'srag\\LibrariesNamespaceChanger\\GeneratePluginPhpAndXml' => $vendorDir . '/srag/librariesnamespacechanger/src/GeneratePluginPhpAndXml.php',
     'srag\\LibrariesNamespaceChanger\\GeneratePluginReadme' => $vendorDir . '/srag/librariesnamespacechanger/src/GeneratePluginReadme.php',

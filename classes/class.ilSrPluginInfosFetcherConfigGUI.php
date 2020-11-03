@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use srag\DIC\SrPluginInfosFetcher\DevTools\DevToolsCtrl;
+use srag\DevTools\SrPluginInfosFetcher\DevToolsCtrl;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
 use srag\Plugins\SrPluginInfosFetcher\Config\ConfigCtrl;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
@@ -12,7 +12,7 @@ use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
  *
  * @author            studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *
- * @ilCtrl_isCalledBy srag\DIC\SrPluginInfosFetcher\DevTools\DevToolsCtrl: ilSrPluginInfosFetcherConfigGUI
+ * @ilCtrl_isCalledBy srag\DevTools\SrPluginInfosFetcher\DevToolsCtrl: ilSrPluginInfosFetcherConfigGUI
  */
 class ilSrPluginInfosFetcherConfigGUI extends ilPluginConfigGUI
 {
