@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.1]
+- Generate readme
+
+## [0.2.0]
+- Generate readme
+
 ## [0.1.6]
 - Fix
 

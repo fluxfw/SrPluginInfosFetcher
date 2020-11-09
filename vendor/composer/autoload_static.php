@@ -21,7 +21,7 @@ class ComposerStaticInitd8bb46c40a0dbfde8cbfecb37012657c
             'srag\\GitCurl\\SrPluginInfosFetcher\\' => 34,
             'srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\' => 52,
             'srag\\DevTools\\SrPluginInfosFetcher\\' => 35,
-            'srag\\DIC\\' => 9,
+            'srag\\DIC\\SrPluginInfosFetcher\\' => 30,
             'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\' => 42,
             'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\' => 45,
         ),
@@ -56,7 +56,7 @@ class ComposerStaticInitd8bb46c40a0dbfde8cbfecb37012657c
         array (
             0 => __DIR__ . '/..' . '/srag/devtools/src',
         ),
-        'srag\\DIC\\' => 
+        'srag\\DIC\\SrPluginInfosFetcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/dic/src',
         ),
