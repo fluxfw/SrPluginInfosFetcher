@@ -9,7 +9,7 @@ use ilPluginConfigGUI;
 use ilUtil;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
 use srag\DIC\SrPluginInfosFetcher\Plugin\PluginInterface;
-use srag\DIC\SrPluginInfosFetcher\Util\LibraryLanguageInstaller;
+use srag\LibraryLanguageInstaller\SrPluginInfosFetcher\LibraryLanguageInstaller;
 
 /**
  * Class DevToolsCtrl
