@@ -7,8 +7,8 @@ namespace Composer\Autoload;
 class ComposerStaticInitd8bb46c40a0dbfde8cbfecb37012657c
 {
     public static $files = array (
-        '8f5ef0e369859ce50df96a5efc962349' => __DIR__ . '/..' . '/srag/dic/src/PHPVersionChecker.php',
-        '63200d7bb754e527ddab55276020d8f9' => __DIR__ . '/..' . '/srag/dic/src/Ilias7PreWarn.php',
+        'a3a560c39a824add63c1d362799ef1bf' => __DIR__ . '/..' . '/srag/dic/src/PHPVersionChecker.php',
+        '2c5a24e815600f0acd1420ecfcd9bd0b' => __DIR__ . '/..' . '/srag/dic/src/Ilias7PreWarn.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -84,7 +84,7 @@ class ComposerStaticInitd8bb46c40a0dbfde8cbfecb37012657c
         'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\Config\\AbstractRepository' => __DIR__ . '/..' . '/srag/activerecordconfig/src/Config/AbstractRepository.php',
         'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\Config\\Config' => __DIR__ . '/..' . '/srag/activerecordconfig/src/Config/Config.php',
         'srag\\ActiveRecordConfig\\SrPluginInfosFetcher\\Exception\\ActiveRecordConfigException' => __DIR__ . '/..' . '/srag/activerecordconfig/src/Exception/ActiveRecordConfigException.php',
-        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\CheckboxInputGUI\\AjaxCheckbox' => __DIR__ . '/..' . '/srag/custominputguis/src/AjaxCheckbox/AjaxCheckbox.php',
+        'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\AjaxCheckbox\\AjaxCheckbox' => __DIR__ . '/..' . '/srag/custominputguis/src/AjaxCheckbox/AjaxCheckbox.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\CheckboxInputGUI\\CheckboxInputGUI' => __DIR__ . '/..' . '/srag/custominputguis/src/CheckboxInputGUI/CheckboxInputGUI.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\ColorPickerInputGUI\\ColorPickerInputGUI' => __DIR__ . '/..' . '/srag/custominputguis/src/ColorPickerInputGUI/ColorPickerInputGUI.php',
         'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\CustomInputGUIs' => __DIR__ . '/..' . '/srag/custominputguis/src/CustomInputGUIs.php',

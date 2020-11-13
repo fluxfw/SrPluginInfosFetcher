@@ -1,5 +1,5 @@
 {
-  "name": "srag/plugins/srplugininfosfetcher",
+  "name": "srag/srplugininfosfetcher",
   "description": "",
   "version": "0.3.5",
   "extra": {
@@ -46,7 +46,8 @@
       "srag\\Plugins\\SrPluginInfosFetcher\\": "src/"
     },
     "classmap": [
-      "classes/"
+      "classes/",
+      "src/Config/class.ConfigCtrl.php"
     ],
     "files": [
       "vendor/srag/dic/src/PHPVersionChecker.php",
