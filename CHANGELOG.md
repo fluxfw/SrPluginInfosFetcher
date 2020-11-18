@@ -1,5 +1,8 @@
 # Changelog
 
+## [x]
+- Ping after each object for not ILIAS auto set inactive cron job if during longer
+
 ## [0.3.5]
 - `Ilias7PreWarn`
 

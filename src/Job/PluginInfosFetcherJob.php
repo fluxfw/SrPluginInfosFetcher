@@ -4,6 +4,7 @@ namespace srag\Plugins\SrPluginInfosFetcher\Job;
 
 use ilCronJob;
 use ilCronJobResult;
+use ilCronManager;
 use ilSrPluginInfosFetcherPlugin;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
 use srag\Plugins\SrPluginInfosFetcher\Config\Form\FormBuilder;
@@ -111,7 +112,11 @@ class PluginInfosFetcherJob extends ilCronJob
 
         $plugins = self::srPluginInfosFetcher()->ilias()->dataCollections()->getPlugins($data_collection_table_id);
 
+        ilCronManager::ping($this->getId());
+
         $updated_plugins = $this->fetchPluginInfos($plugins);
+
+        ilCronManager::ping($this->getId());
 
         $updated_plugins_count = self::srPluginInfosFetcher()->ilias()->dataCollections()->updatePlugins($data_collection_table_id, $updated_plugins);
 
