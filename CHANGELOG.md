@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.0]
+- Take url if download field has title
+- Ping after each object for not ILIAS auto set inactive cron job if during longer
+
 ## [0.3.5]
 - `Ilias7PreWarn`
 

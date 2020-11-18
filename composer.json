@@ -1,13 +1,16 @@
 {
-  "name": "srag/plugins/srplugininfosfetcher",
-  "description": "",
-  "version": "0.3.5",
-  "ilias_plugin": {
-    "id": "srplinfe",
-    "name": "SrPluginInfosFetcher",
-    "ilias_min_version": "5.4.0",
-    "ilias_max_version": "6.999",
-    "slot": "Services/Cron/CronHook"
+  "name": "srag/srplugininfosfetcher",
+  "description": "Cron job plugin for http://plugins.ilias.de to keep plugin's version, min_ilias_version and max_ilias_version up to date",
+  "version": "0.4.0",
+  "extra": {
+    "ilias_plugin": {
+      "id": "srplinfe",
+      "name": "SrPluginInfosFetcher",
+      "ilias_min_version": "5.4.0",
+      "ilias_max_version": "6.999",
+      "slot": "Services/Cron/CronHook"
+    },
+    "generate_plugin_readme_template": "SRAG_ILIAS_PLUGIN"
   },
   "type": "project",
   "keywords": [
@@ -31,7 +34,9 @@
     "php": ">=7.0",
     "srag/activerecordconfig": ">=0.1.0",
     "srag/custominputguis": ">=0.1.0",
+    "srag/devtools": ">=0.1.0",
     "srag/dic": ">=0.1.0",
+    "srag/generateplugininfoshelper": ">=0.1.0",
     "srag/gitcurl": ">=0.1.0",
     "srag/librariesnamespacechanger": ">=0.1.0",
     "srag/removeplugindataconfirm": ">=0.1.0"
@@ -41,7 +46,8 @@
       "srag\\Plugins\\SrPluginInfosFetcher\\": "src/"
     },
     "classmap": [
-      "classes/"
+      "classes/",
+      "src/Config/class.ConfigCtrl.php"
     ],
     "files": [
       "vendor/srag/dic/src/PHPVersionChecker.php",
@@ -57,8 +63,8 @@
     "pre-autoload-dump": [
       "srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger::rewriteLibrariesNamespaces",
       "srag\\LibrariesNamespaceChanger\\PHP72Backport::PHP72Backport",
-      "srag\\LibrariesNamespaceChanger\\GeneratePluginPhpAndXml::generatePluginPhpAndXml",
-      "srag\\LibrariesNamespaceChanger\\UpdatePluginReadme::updatePluginReadme"
+      "srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\GeneratePluginPhpAndXml::generatePluginPhpAndXml",
+      "srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\GeneratePluginReadme::generatePluginReadme"
     ]
   }
 }

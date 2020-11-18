@@ -67,7 +67,7 @@ final class DataCollections
         $records = $data_collection_table->getRecords();
 
         foreach ($records as $record) {
-            $plugin = new PluginInfo();
+            $plugin = self::srPluginInfosFetcher()->info()->factory()->newInstance();
 
             $fields = $record->getRecordFields();
 
@@ -183,9 +183,17 @@ final class DataCollections
      */
     private function getValueFromField(string $property, ilDclBaseRecordFieldModel $field) : string
     {
-        if (empty($field->getValue()) || is_array($field->getValue()) && isset($field->getValue()["warning"])) {
+        $value = $field->getValue();
+
+        if (empty($value) || is_array($value) && isset($value["warning"])) {
             // Invalid value
             return "";
+        }
+
+        if ($property === "git_url") {
+            if (is_array($value) && $value["link"]) {
+                return strval($value["link"]);
+            }
         }
 
         // Tricks with getPlainText to get correct reference values such ilias_min_version or ilias_max_version

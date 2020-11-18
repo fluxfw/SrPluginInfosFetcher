@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\DIC\SrPluginInfosFetcher\Util;
+namespace srag\LibraryLanguageInstaller\SrPluginInfosFetcher;
 
 use ilDBConstants;
 use ilGlobalCache;
@@ -12,7 +12,7 @@ use srag\DIC\SrPluginInfosFetcher\Plugin\PluginInterface;
 /**
  * Class LibraryLanguageInstaller
  *
- * @package srag\DIC\SrPluginInfosFetcher\Util
+ * @package srag\LibraryLanguageInstaller\SrPluginInfosFetcher
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

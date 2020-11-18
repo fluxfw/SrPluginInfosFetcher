@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.2]
+- Move doc/DESCRIPTION.md to src/LONG_DESCRIPTION.md
+
+## [0.2.1]
+- Generate readme
+
+## [0.2.0]
+- Generate readme
+
+## [0.1.6]
+- Fix
+
 ## [0.1.5]
 - Close curl connection
 

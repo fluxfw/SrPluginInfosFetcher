@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\DIC\SrPluginInfosFetcher\DevTools;
+namespace srag\DevTools\SrPluginInfosFetcher;
 
 use ilAdministrationGUI;
 use ilDBConstants;
@@ -9,12 +9,12 @@ use ilPluginConfigGUI;
 use ilUtil;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
 use srag\DIC\SrPluginInfosFetcher\Plugin\PluginInterface;
-use srag\DIC\SrPluginInfosFetcher\Util\LibraryLanguageInstaller;
+use srag\LibraryLanguageInstaller\SrPluginInfosFetcher\LibraryLanguageInstaller;
 
 /**
  * Class DevToolsCtrl
  *
- * @package srag\DIC\SrPluginInfosFetcher\DevTools
+ * @package srag\DevTools\SrPluginInfosFetcher
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
@@ -69,7 +69,7 @@ class DevToolsCtrl
      */
     public static function installLanguages(PluginInterface $plugin)/*:void*/
     {
-        LibraryLanguageInstaller::getInstance()->withPlugin($plugin)->withLibraryLanguageDirectory(__DIR__ . "/lang")->updateLanguages();
+        LibraryLanguageInstaller::getInstance()->withPlugin($plugin)->withLibraryLanguageDirectory(__DIR__ . "/../lang")->updateLanguages();
     }
 
 
