@@ -7,6 +7,7 @@ use srag\DIC\SrPluginInfosFetcher\DICTrait;
 use srag\GitCurl\SrPluginInfosFetcher\GitCurl;
 use srag\Plugins\SrPluginInfosFetcher\Access\Ilias;
 use srag\Plugins\SrPluginInfosFetcher\Config\Repository as ConfigRepository;
+use srag\Plugins\SrPluginInfosFetcher\Info\Repository as InfoRepository;
 use srag\Plugins\SrPluginInfosFetcher\Job\Repository as JobsRepository;
 use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
 
@@ -67,6 +68,7 @@ final class Repository
     public function dropTables()/*:void*/
     {
         $this->config()->dropTables();
+        $this->info()->dropTables();
         $this->jobs()->dropTables();
     }
 
@@ -92,11 +94,21 @@ final class Repository
 
 
     /**
+     * @return InfoRepository
+     */
+    public function info() : InfoRepository
+    {
+        return InfoRepository::getInstance();
+    }
+
+
+    /**
      *
      */
     public function installTables()/*:void*/
     {
         $this->config()->installTables();
+        $this->info()->installTables();
         $this->jobs()->installTables();
     }
 

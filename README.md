@@ -2,7 +2,7 @@
 
 # SrPluginInfosFetcher ILIAS Plugin
 
-
+Cron job plugin for http://plugins.ilias.de to keep plugin's version, min_ilias_version and max_ilias_version up to date
 
 This is an OpenSource project by studer + raimann ag, CH-Burgdorf (https://studer-raimann.ch)
 
@@ -26,8 +26,6 @@ git clone https://github.com/studer-raimann/SrPluginInfosFetcher.git SrPluginInf
 Update, activate and config the plugin in the ILIAS Plugin Administration
 
 ## Description
-
-Cron job plugin for http://plugins.ilias.de to keep plugin's version, min_ilias_version and max_ilias_version up to date
 
 ![Last modification](./doc/images/last_modification.png)
 

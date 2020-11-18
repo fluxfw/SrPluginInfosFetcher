@@ -196,7 +196,7 @@ class PluginInfosFetcherJob extends ilCronJob
         foreach ($plugins as $plugin) {
             $updated_plugin = false;
 
-            $new_plugin = clone $plugin;
+            $new_plugin = self::srPluginInfosFetcher()->info()->clonePlugin($plugin);
 
             $plugin_php = self::srPluginInfosFetcher()->gitFetcher($new_plugin->getGitUrl())->fetchFile("plugin.php");
 
