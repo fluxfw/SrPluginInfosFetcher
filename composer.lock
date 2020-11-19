@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3f30b12dfdfa1516e37313157058c29",
+    "content-hash": "bc67382f558056955866e04b082f90de",
     "packages": [
         {
             "name": "srag/activerecordconfig",
@@ -290,16 +290,16 @@
         },
         {
             "name": "srag/gitcurl",
-            "version": "0.2.2",
+            "version": "0.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/studer-raimann/GitCurl.git",
-                "reference": "4c7f0cfeb1aac52e03a9b690c38f31a645c0b52d"
+                "reference": "53623ef268268c04d3fb94d7311c09069b1449fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/studer-raimann/GitCurl/zipball/4c7f0cfeb1aac52e03a9b690c38f31a645c0b52d",
-                "reference": "4c7f0cfeb1aac52e03a9b690c38f31a645c0b52d",
+                "url": "https://api.github.com/repos/studer-raimann/GitCurl/zipball/53623ef268268c04d3fb94d7311c09069b1449fa",
+                "reference": "53623ef268268c04d3fb94d7311c09069b1449fa",
                 "shasum": ""
             },
             "require": {
@@ -319,7 +319,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "srag\\GitCurl\\SrPluginInfosFetcher\\": "src/"
+                    "srag\\GitCurl\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -341,7 +341,7 @@
                 "curl",
                 "git"
             ],
-            "time": "2020-11-13T09:13:04+00:00"
+            "time": "2020-11-19T12:54:52+00:00"
         },
         {
             "name": "srag/librariesnamespacechanger",

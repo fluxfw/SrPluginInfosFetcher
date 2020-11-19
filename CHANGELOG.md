@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.4.1]
+- Fix default branch
+
 ## [0.4.0]
 - Take url if download field has title
 - Ping after each object for not ILIAS auto set inactive cron job if during longer
