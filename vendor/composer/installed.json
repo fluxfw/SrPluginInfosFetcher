@@ -293,17 +293,17 @@
     },
     {
         "name": "srag/gitcurl",
-        "version": "0.2.2",
-        "version_normalized": "0.2.2.0",
+        "version": "0.2.3",
+        "version_normalized": "0.2.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/studer-raimann/GitCurl.git",
-            "reference": "4c7f0cfeb1aac52e03a9b690c38f31a645c0b52d"
+            "reference": "53623ef268268c04d3fb94d7311c09069b1449fa"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/studer-raimann/GitCurl/zipball/4c7f0cfeb1aac52e03a9b690c38f31a645c0b52d",
-            "reference": "4c7f0cfeb1aac52e03a9b690c38f31a645c0b52d",
+            "url": "https://api.github.com/repos/studer-raimann/GitCurl/zipball/53623ef268268c04d3fb94d7311c09069b1449fa",
+            "reference": "53623ef268268c04d3fb94d7311c09069b1449fa",
             "shasum": ""
         },
         "require": {
@@ -313,7 +313,7 @@
         "require-dev": {
             "srag/generateplugininfoshelper": ">=0.1.0"
         },
-        "time": "2020-11-13T09:13:04+00:00",
+        "time": "2020-11-19T12:54:52+00:00",
         "type": "library",
         "extra": {
             "ilias_plugin": {
