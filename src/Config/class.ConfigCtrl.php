@@ -2,6 +2,8 @@
 
 namespace srag\Plugins\SrPluginInfosFetcher\Config;
 
+require_once __DIR__ . "/../../vendor/autoload.php";
+
 use ilSrPluginInfosFetcherPlugin;
 use ilUtil;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
