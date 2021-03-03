@@ -1,23 +1,27 @@
 {
   "name": "srag/srplugininfosfetcher",
   "description": "Cron job plugin for http://plugins.ilias.de to keep plugin's version, min_ilias_version and max_ilias_version up to date",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "extra": {
     "ilias_plugin": {
       "id": "srplinfe",
       "name": "SrPluginInfosFetcher",
       "ilias_min_version": "5.4.0",
       "ilias_max_version": "6.999",
-      "slot": "Services/Cron/CronHook"
+      "slot": "Services/Cron/CronHook",
+      "supports_cli_setup": true
     },
-    "generate_plugin_readme_template": "SRAG_ILIAS_PLUGIN"
+    "generate_plugin_readme_template": "SRAG_ILIAS_PLUGIN",
+    "long_description_template": "src/LONG_DESCRIPTION.md"
   },
   "type": "project",
   "keywords": [
-    "ILIAS",
-    "Plugin"
+    "cron",
+    "ilias",
+    "job",
+    "plugin"
   ],
-  "homepage": "https://github.com/studer-raimann/SrPluginInfosFetcher",
+  "homepage": "https://github.com/fluxfw/SrPluginInfosFetcher",
   "license": "GPL-3.0-only",
   "authors": [
     {
@@ -50,8 +54,7 @@
       "src/Config/class.ConfigCtrl.php"
     ],
     "files": [
-      "vendor/srag/dic/src/PHPVersionChecker.php",
-      "vendor/srag/dic/src/Ilias7PreWarn.php"
+      "vendor/srag/dic/src/PHPVersionChecker.php"
     ]
   },
   "config": {

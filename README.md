@@ -20,7 +20,7 @@ Start at your ILIAS root directory
 ```bash
 mkdir -p Customizing/global/plugins/Services/Cron/CronHook
 cd Customizing/global/plugins/Services/Cron/CronHook
-git clone https://github.com/studer-raimann/SrPluginInfosFetcher.git SrPluginInfosFetcher
+git clone https://github.com/fluxfw/SrPluginInfosFetcher.git SrPluginInfosFetcher
 ```
 
 Update, activate and config the plugin in the ILIAS Plugin Administration
@@ -31,8 +31,9 @@ Update, activate and config the plugin in the ILIAS Plugin Administration
 
 ## Adjustment suggestions
 
-* External users can report suggestions and bugs at https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_PCIPD
-* Adjustment suggestions by pull requests via github
+You can report bugs or suggestions at https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_PCIPD
+
+There is no guarantee this can be fixed or implemented
 
 ## ILIAS Plugin SLA
 
