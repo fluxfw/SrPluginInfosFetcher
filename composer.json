@@ -21,7 +21,7 @@
     "job",
     "plugin"
   ],
-  "homepage": "https://github.com/studer-raimann/SrPluginInfosFetcher",
+  "homepage": "https://github.com/fluxfw/SrPluginInfosFetcher",
   "license": "GPL-3.0-only",
   "authors": [
     {
