@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.4.2]
+- Update project url
+
 ## [1.4.1]
 - Fix default branch
 

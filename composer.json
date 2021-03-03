@@ -1,7 +1,7 @@
 {
   "name": "srag/srplugininfosfetcher",
   "description": "Cron job plugin for http://plugins.ilias.de to keep plugin's version, min_ilias_version and max_ilias_version up to date",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "extra": {
     "ilias_plugin": {
       "id": "srplinfe",
