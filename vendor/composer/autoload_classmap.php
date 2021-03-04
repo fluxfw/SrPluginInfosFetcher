@@ -94,6 +94,7 @@ return array(
     'srag\\DevTools\\SrPluginInfosFetcher\\DevToolsCtrl' => $vendorDir . '/srag/devtools/src/class.DevToolsCtrl.php',
     'srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\GeneratePluginPhpAndXml' => $vendorDir . '/srag/generateplugininfoshelper/src/GeneratePluginPhpAndXml.php',
     'srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\GeneratePluginReadme' => $vendorDir . '/srag/generateplugininfoshelper/src/GeneratePluginReadme.php',
+    'srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\UpdateVersion' => $vendorDir . '/srag/generateplugininfoshelper/src/UpdateVersion.php',
     'srag\\GitCurl\\SrPluginInfosFetcher\\GitCurl' => $vendorDir . '/srag/gitcurl/src/GitCurl.php',
     'srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger' => $vendorDir . '/srag/librariesnamespacechanger/src/LibrariesNamespaceChanger.php',
     'srag\\LibrariesNamespaceChanger\\PHP72Backport' => $vendorDir . '/srag/librariesnamespacechanger/src/PHP72Backport.php',
