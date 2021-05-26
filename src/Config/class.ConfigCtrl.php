@@ -14,8 +14,6 @@ use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
  *
  * @package           srag\Plugins\SrPluginInfosFetcher\Config
  *
- * @author            studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
- *
  * @ilCtrl_isCalledBy srag\Plugins\SrPluginInfosFetcher\Config\ConfigCtrl: ilSrPluginInfosFetcherConfigGUI
  */
 class ConfigCtrl

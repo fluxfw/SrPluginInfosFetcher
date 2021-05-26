@@ -10,8 +10,6 @@ use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
  * Class Repository
  *
  * @package srag\Plugins\SrPluginInfosFetcher\Job
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
 final class Repository
 {

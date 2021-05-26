@@ -11,8 +11,6 @@ use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
  * Class FormBuilder
  *
  * @package srag\Plugins\SrPluginInfosFetcher\Config\Form
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
 class FormBuilder extends AbstractFormBuilder
 {
