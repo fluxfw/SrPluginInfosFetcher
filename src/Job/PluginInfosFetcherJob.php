@@ -15,8 +15,6 @@ use srag\Plugins\SrPluginInfosFetcher\Utils\SrPluginInfosFetcherTrait;
  * Class PluginInfosFetcherJob
  *
  * @package srag\Plugins\SrPluginInfosFetcher\Job
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
 class PluginInfosFetcherJob extends ilCronJob
 {

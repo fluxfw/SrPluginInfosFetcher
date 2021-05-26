@@ -8,8 +8,6 @@ use srag\DIC\SrPluginInfosFetcher\DICTrait;
  * Class AbstractFactory
  *
  * @package srag\ActiveRecordConfig\SrPluginInfosFetcher\Config
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
 abstract class AbstractFactory
 {
