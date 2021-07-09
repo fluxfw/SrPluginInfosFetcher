@@ -204,7 +204,7 @@ final class DataCollections
      *
      * @return string|null
      */
-    private function mapFieldTitleToProperty(ilDclBaseRecordFieldModel $field)/*: ?string*/
+    private function mapFieldTitleToProperty(ilDclBaseRecordFieldModel $field) : ?string
     {
         switch ($field->getField()->getTitle()) {
             case "Plugin ID":
@@ -248,7 +248,7 @@ final class DataCollections
      *
      * @return string|null
      */
-    private function mapPropertyToFieldTitle(string $property)/*: ?string*/
+    private function mapPropertyToFieldTitle(string $property) : ?string
     {
         switch ($property) {
             /*case "plugin_id":

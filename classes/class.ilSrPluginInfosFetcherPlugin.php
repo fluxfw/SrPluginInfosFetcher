@@ -60,7 +60,7 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
     /**
      * @inheritDoc
      */
-    public function getCronJobInstance(/*string*/ $a_job_id)/*: ?ilCronJob*/
+    public function getCronJobInstance(/*string*/ $a_job_id) : ?ilCronJob
     {
         return self::srPluginInfosFetcher()->jobs()->factory()->newInstanceById($a_job_id);
     }
@@ -87,7 +87,7 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
     /**
      * @inheritDoc
      */
-    public function updateLanguages(/*?array*/ $a_lang_keys = null)/*:void*/
+    public function updateLanguages(/*?array*/ $a_lang_keys = null) : void
     {
         parent::updateLanguages($a_lang_keys);
 
@@ -100,7 +100,7 @@ class ilSrPluginInfosFetcherPlugin extends ilCronHookPlugin
     /**
      * @inheritDoc
      */
-    protected function deleteData()/*: void*/
+    protected function deleteData() : void
     {
         self::srPluginInfosFetcher()->dropTables();
     }

@@ -80,7 +80,7 @@ class PluginInfo
     /**
      * @param string $git_url
      */
-    public function setGitUrl(string $git_url)/*: void*/
+    public function setGitUrl(string $git_url) : void
     {
         $this->git_url = $git_url;
     }
@@ -98,7 +98,7 @@ class PluginInfo
     /**
      * @param string $ilias_max_version
      */
-    public function setIliasMaxVersion(string $ilias_max_version)/*: void*/
+    public function setIliasMaxVersion(string $ilias_max_version) : void
     {
         $this->ilias_max_version = $this->fixMinMaxVersion($ilias_max_version);
     }
@@ -116,7 +116,7 @@ class PluginInfo
     /**
      * @param string $ilias_min_version
      */
-    public function setIliasMinVersion(string $ilias_min_version)/*: void*/
+    public function setIliasMinVersion(string $ilias_min_version) : void
     {
         $this->ilias_min_version = $this->fixMinMaxVersion($ilias_min_version);
     }
@@ -134,7 +134,7 @@ class PluginInfo
     /**
      * @param string[] $languages
      */
-    public function setLanguages(array $languages)/*: void*/
+    public function setLanguages(array $languages) : void
     {
         $this->languages = $languages;
     }
@@ -152,7 +152,7 @@ class PluginInfo
     /**
      * @param string $licence
      */
-    public function setLicence(string $licence)/*: void*/
+    public function setLicence(string $licence) : void
     {
         $this->licence = $licence;
     }
@@ -170,7 +170,7 @@ class PluginInfo
     /**
      * @param string $plugin_id
      */
-    public function setPluginId(string $plugin_id)/*: void*/
+    public function setPluginId(string $plugin_id) : void
     {
         $this->plugin_id = $plugin_id;
     }
@@ -188,7 +188,7 @@ class PluginInfo
     /**
      * @param string $plugin_name
      */
-    public function setPluginName(string $plugin_name)/*: void*/
+    public function setPluginName(string $plugin_name) : void
     {
         $this->plugin_name = $plugin_name;
     }
@@ -206,7 +206,7 @@ class PluginInfo
     /**
      * @param string $plugin_version
      */
-    public function setPluginVersion(string $plugin_version)/*: void*/
+    public function setPluginVersion(string $plugin_version) : void
     {
         $this->plugin_version = $plugin_version;
     }
@@ -244,7 +244,7 @@ class PluginInfo
     /**
      * @param string $responsible
      */
-    public function setResponsible(string $responsible)/*: void*/
+    public function setResponsible(string $responsible) : void
     {
         $this->responsible = $responsible;
     }
@@ -262,7 +262,7 @@ class PluginInfo
     /**
      * @param string $responsible_mail
      */
-    public function setResponsibleMail(string $responsible_mail)/*: void*/
+    public function setResponsibleMail(string $responsible_mail) : void
     {
         $this->responsible_mail = $responsible_mail;
     }
