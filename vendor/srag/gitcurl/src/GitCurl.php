@@ -63,7 +63,7 @@ final class GitCurl
      *
      * @return string|null
      */
-    public function fetchFile(string $path)/* : ?string*/
+    public function fetchFile(string $path) : ?string
     {
         $url = $this->url . "/" . $this->default_branch . "/" . $path;
 
@@ -82,7 +82,7 @@ final class GitCurl
     /**
      *
      */
-    public function getDefaultBranch()/* : void*/
+    public function getDefaultBranch() : void
     {
         // Supports only github api
         if (strpos($this->url, "github.com") === false) {
@@ -111,7 +111,7 @@ final class GitCurl
      *
      * @return string|null
      */
-    private function doRequest(string $url, array $headers)/* : ?string*/
+    private function doRequest(string $url, array $headers) : ?string
     {
         $curlConnection = null;
 
@@ -136,7 +136,7 @@ final class GitCurl
     /**
      *
      */
-    private function fixUrl()/* : void*/
+    private function fixUrl() : void
     {
         // Fix possible windows paths
         $this->url = str_replace("\\", "/", $this->url);
