@@ -89,7 +89,7 @@ class FormBuilder extends AbstractFormBuilder
     /**
      * @inheritDoc
      */
-    protected function storeData(array $data)/* : void*/
+    protected function storeData(array $data) : void
     {
         self::srPluginInfosFetcher()->config()->setValue(self::KEY_DATA_COLLECTION_TABLE_ID, intval($data[self::KEY_DATA_COLLECTION_TABLE_ID]));
     }

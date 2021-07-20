@@ -1,18 +1,15 @@
 {
   "name": "srag/srplugininfosfetcher",
   "description": "Cron job plugin for http://plugins.ilias.de to keep plugin's version, min_ilias_version and max_ilias_version up to date",
-  "version": "1.4.6",
+  "version": "1.5.0",
   "extra": {
     "ilias_plugin": {
       "id": "srplinfe",
       "name": "SrPluginInfosFetcher",
-      "ilias_min_version": "5.4.0",
-      "ilias_max_version": "6.999",
-      "slot": "Services/Cron/CronHook",
-      "supports_cli_setup": true
-    },
-    "generate_plugin_readme_template": "ILIAS_PLUGIN",
-    "long_description_template": "src/LONG_DESCRIPTION.md"
+      "ilias_min_version": "6.0",
+      "ilias_max_version": "7.999",
+      "slot": "Services/Cron/CronHook"
+    }
   },
   "type": "project",
   "keywords": [
@@ -32,7 +29,7 @@
     }
   ],
   "require": {
-    "php": ">=7.0",
+    "php": ">=7.2",
     "srag/activerecordconfig": ">=0.1.0",
     "srag/custominputguis": ">=0.1.0",
     "srag/devtools": ">=0.1.0",
@@ -62,9 +59,7 @@
   "scripts": {
     "pre-autoload-dump": [
       "srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger::rewriteLibrariesNamespaces",
-      "srag\\LibrariesNamespaceChanger\\PHP72Backport::PHP72Backport",
-      "srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\GeneratePluginPhpAndXml::generatePluginPhpAndXml",
-      "srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\GeneratePluginReadme::generatePluginReadme"
+      "srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\GeneratePluginPhpAndXml::generatePluginPhpAndXml"
     ],
     "update-version": [
       "srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\UpdateVersion::updateVersion"

@@ -3,7 +3,6 @@
 namespace srag\GitCurl\SrPluginInfosFetcher;
 
 use ilCurlConnection;
-use ilProxySettings;
 use srag\DIC\SrPluginInfosFetcher\DICTrait;
 use Throwable;
 
@@ -24,7 +23,7 @@ final class GitCurl
     /**
      * @var string
      */
-    private $default_branch = "master";
+    private $default_branch = "main";
     /**
      * @var string
      */
@@ -64,7 +63,7 @@ final class GitCurl
      *
      * @return string|null
      */
-    public function fetchFile(string $path)/* : ?string*/
+    public function fetchFile(string $path) : ?string
     {
         $url = $this->url . "/" . $this->default_branch . "/" . $path;
 
@@ -83,7 +82,7 @@ final class GitCurl
     /**
      *
      */
-    public function getDefaultBranch()/* : void*/
+    public function getDefaultBranch() : void
     {
         // Supports only github api
         if (strpos($this->url, "github.com") === false) {
@@ -112,7 +111,7 @@ final class GitCurl
      *
      * @return string|null
      */
-    private function doRequest(string $url, array $headers)/* : ?string*/
+    private function doRequest(string $url, array $headers) : ?string
     {
         $curlConnection = null;
 
@@ -137,7 +136,7 @@ final class GitCurl
     /**
      *
      */
-    private function fixUrl()/* : void*/
+    private function fixUrl() : void
     {
         // Fix possible windows paths
         $this->url = str_replace("\\", "/", $this->url);
@@ -171,21 +170,6 @@ final class GitCurl
         $curlConnection = new ilCurlConnection($url);
 
         $curlConnection->init();
-
-        if (!self::version()->is6()) {
-            $proxy = ilProxySettings::_getInstance();
-            if ($proxy->isActive()) {
-                $curlConnection->setOpt(CURLOPT_HTTPPROXYTUNNEL, true);
-
-                if (!empty($proxy->getHost())) {
-                    $curlConnection->setOpt(CURLOPT_PROXY, $proxy->getHost());
-                }
-
-                if (!empty($proxy->getPort())) {
-                    $curlConnection->setOpt(CURLOPT_PROXYPORT, $proxy->getPort());
-                }
-            }
-        }
 
         $headers["User-Agent"] = "ILIAS " . self::version()->getILIASVersion();
         $curlConnection->setOpt(CURLOPT_HTTPHEADER, array_map(function (string $key, string $value) : string {
