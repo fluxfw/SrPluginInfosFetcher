@@ -11,7 +11,6 @@ return array(
     'srag\\LibraryLanguageInstaller\\SrPluginInfosFetcher\\' => array($vendorDir . '/srag/librarylanguageinstaller/src'),
     'srag\\LibrariesNamespaceChanger\\' => array($vendorDir . '/srag/librariesnamespacechanger/src'),
     'srag\\GitCurl\\SrPluginInfosFetcher\\' => array($vendorDir . '/srag/gitcurl/src'),
-    'srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\' => array($vendorDir . '/srag/generateplugininfoshelper/src'),
     'srag\\DevTools\\SrPluginInfosFetcher\\' => array($vendorDir . '/srag/devtools/src'),
     'srag\\DIC\\SrPluginInfosFetcher\\' => array($vendorDir . '/srag/dic/src'),
     'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\' => array($vendorDir . '/srag/custominputguis/src'),

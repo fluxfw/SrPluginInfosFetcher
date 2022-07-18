@@ -18,7 +18,6 @@ class ComposerStaticInitd8bb46c40a0dbfde8cbfecb37012657c
             'srag\\LibraryLanguageInstaller\\SrPluginInfosFetcher\\' => 51,
             'srag\\LibrariesNamespaceChanger\\' => 31,
             'srag\\GitCurl\\SrPluginInfosFetcher\\' => 34,
-            'srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\' => 52,
             'srag\\DevTools\\SrPluginInfosFetcher\\' => 35,
             'srag\\DIC\\SrPluginInfosFetcher\\' => 30,
             'srag\\CustomInputGUIs\\SrPluginInfosFetcher\\' => 42,
@@ -46,10 +45,6 @@ class ComposerStaticInitd8bb46c40a0dbfde8cbfecb37012657c
         'srag\\GitCurl\\SrPluginInfosFetcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/gitcurl/src',
-        ),
-        'srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/srag/generateplugininfoshelper/src',
         ),
         'srag\\DevTools\\SrPluginInfosFetcher\\' => 
         array (
@@ -142,9 +137,6 @@ class ComposerStaticInitd8bb46c40a0dbfde8cbfecb37012657c
         'srag\\DIC\\SrPluginInfosFetcher\\Version\\Version' => __DIR__ . '/..' . '/srag/dic/src/Version/Version.php',
         'srag\\DIC\\SrPluginInfosFetcher\\Version\\VersionInterface' => __DIR__ . '/..' . '/srag/dic/src/Version/VersionInterface.php',
         'srag\\DevTools\\SrPluginInfosFetcher\\DevToolsCtrl' => __DIR__ . '/..' . '/srag/devtools/src/class.DevToolsCtrl.php',
-        'srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\GeneratePluginPhpAndXml' => __DIR__ . '/..' . '/srag/generateplugininfoshelper/src/GeneratePluginPhpAndXml.php',
-        'srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\GeneratePluginReadme' => __DIR__ . '/..' . '/srag/generateplugininfoshelper/src/GeneratePluginReadme.php',
-        'srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\UpdateVersion' => __DIR__ . '/..' . '/srag/generateplugininfoshelper/src/UpdateVersion.php',
         'srag\\GitCurl\\SrPluginInfosFetcher\\GitCurl' => __DIR__ . '/..' . '/srag/gitcurl/src/GitCurl.php',
         'srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger' => __DIR__ . '/..' . '/srag/librariesnamespacechanger/src/LibrariesNamespaceChanger.php',
         'srag\\LibraryLanguageInstaller\\SrPluginInfosFetcher\\LibraryLanguageInstaller' => __DIR__ . '/..' . '/srag/librarylanguageinstaller/src/LibraryLanguageInstaller.php',

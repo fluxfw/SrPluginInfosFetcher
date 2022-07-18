@@ -16,7 +16,7 @@ Start at your ILIAS root directory
 ```bash
 mkdir -p Customizing/global/plugins/Services/Cron/CronHook
 cd Customizing/global/plugins/Services/Cron/CronHook
-git clone https://github.com/fluxapps/SrPluginInfosFetcher.git SrPluginInfosFetcher
+git clone https://github.com/fluxfw/SrPluginInfosFetcher.git SrPluginInfosFetcher
 ```
 
 Update, activate and config the plugin in the ILIAS Plugin Administration

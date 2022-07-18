@@ -1,16 +1,7 @@
 {
   "name": "srag/srplugininfosfetcher",
   "description": "Cron job plugin for http://plugins.ilias.de to keep plugin's version, min_ilias_version and max_ilias_version up to date",
-  "version": "1.5.0",
-  "extra": {
-    "ilias_plugin": {
-      "id": "srplinfe",
-      "name": "SrPluginInfosFetcher",
-      "ilias_min_version": "6.0",
-      "ilias_max_version": "7.999",
-      "slot": "Services/Cron/CronHook"
-    }
-  },
+  "version": "1.6.0",
   "type": "project",
   "keywords": [
     "cron",
@@ -18,23 +9,13 @@
     "job",
     "plugin"
   ],
-  "homepage": "https://github.com/fluxapps/SrPluginInfosFetcher",
   "license": "GPL-3.0-only",
-  "authors": [
-    {
-      "name": "fluxlabs",
-      "email": "support@fluxlabs.ch",
-      "homepage": "https://fluxlabs.ch",
-      "role": "Developer"
-    }
-  ],
   "require": {
     "php": ">=7.2",
     "srag/activerecordconfig": ">=0.1.0",
     "srag/custominputguis": ">=0.1.0",
     "srag/devtools": ">=0.1.0",
     "srag/dic": ">=0.1.0",
-    "srag/generateplugininfoshelper": ">=0.1.0",
     "srag/gitcurl": ">=0.1.0",
     "srag/librariesnamespacechanger": ">=0.1.0",
     "srag/removeplugindataconfirm": ">=0.1.0"
@@ -58,11 +39,7 @@
   },
   "scripts": {
     "pre-autoload-dump": [
-      "srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger::rewriteLibrariesNamespaces",
-      "srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\GeneratePluginPhpAndXml::generatePluginPhpAndXml"
-    ],
-    "update-version": [
-      "srag\\GeneratePluginInfosHelper\\SrPluginInfosFetcher\\UpdateVersion::updateVersion"
+      "srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger::rewriteLibrariesNamespaces"
     ]
   }
 }
